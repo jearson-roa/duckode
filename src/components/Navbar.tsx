@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="nav-container">
 
           <div className="brand">
-            MiProyecto
+            Duckode 
           </div>
 
           {/* LINKS DESKTOP */}
