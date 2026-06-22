@@ -18,13 +18,22 @@ const QuienSoy: React.FC = () => {
             </h2>
 
             <p>
-              Soy desarrollador enfocado en crear sitios web, ecommerce y sistemas
-              a medida que ayudan a empresas a digitalizarse y vender más.
+              Soy desarrollador en formación, actualmente estudiando Analista Programador en Duoc UC, con una base sólida en desarrollo web y sistemas digitales.</p>
+
+            <p>
+              Cuento con aproximadamente 1 año y medio de experiencia práctica, trabajando en proyectos personales y soluciones orientadas a clientes reales, lo que me ha permitido fortalecer habilidades en diseño y desarrollo de aplicaciones web modernas.
             </p>
 
             <p>
-              Trabajo con tecnologías modernas para entregar soluciones rápidas,
-              escalables y enfocadas en resultados reales.
+              Actualmente me enfoco en el desarrollo de sitios web, aplicaciones y sistemas a medida para pymes, con el objetivo de ayudar a las empresas a digitalizar sus procesos, mejorar su presencia online y aumentar sus oportunidades de venta.
+            </p>
+
+            <p>
+              Me motiva construir soluciones que no solo sean visualmente atractivas, sino que también resuelvan problemas reales, aportando valor tanto al negocio como a sus clientes.
+            </p>
+
+            <p>
+              Trabajo con tecnologías modernas del ecosistema web, priorizando la eficiencia, escalabilidad y una buena experiencia de usuario en cada proyecto.
             </p>
 
             {/* MINI STATS */}
