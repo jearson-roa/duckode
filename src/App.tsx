@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Hero from './components/hero';
 import Contacto from './components/Contacto';
-import Servicios from './components/Servicios';
+import Servicios from './components/servicios';
 import QuienSoy from './components/QuienSoy';
 
 function App() {

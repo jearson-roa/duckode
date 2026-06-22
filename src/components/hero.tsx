@@ -1,10 +1,9 @@
 import React from "react";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <section className="hero-conversion">
       <div className="container">
-
         <div className="hero-grid">
 
           {/* TEXTO */}
@@ -37,7 +36,7 @@ const Hero = () => {
 
             </div>
 
-            {/* STATS MEJORADOS */}
+            {/* STATS */}
             <div className="hero-stats">
 
               <div className="stat-card">
@@ -84,7 +83,6 @@ const Hero = () => {
           </div>
 
         </div>
-
       </div>
     </section>
   );
