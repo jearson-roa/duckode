@@ -1,4 +1,3 @@
-import React from "react";
 import "../App.css";
 
 const Contacto = () => {
@@ -13,7 +12,7 @@ const Contacto = () => {
 
       <div className="row g-4">
 
-        {/* Tarjetas de contacto */}
+        {/* TARJETAS CONTACTO */}
         <div className="col-lg-5">
           <div className="d-grid gap-3">
 
@@ -31,7 +30,7 @@ const Contacto = () => {
             </a>
 
             <a
-              href="mailto:correo@correo.cl"
+              href="mailto:ventas@duckode.cl"
               className="contact-card text-decoration-none"
             >
               <i className="bi bi-envelope-fill fs-1 text-primary"></i>
@@ -59,7 +58,7 @@ const Contacto = () => {
           </div>
         </div>
 
-        {/* Formulario */}
+        {/* FORMULARIO */}
         <div className="col-lg-7">
           <div className="glass-card p-4">
 
@@ -81,10 +80,10 @@ const Contacto = () => {
 
             <div className="mb-3">
               <textarea
-                rows="5"
+                rows={5}
                 className="form-control bg-dark text-white border-secondary"
                 placeholder="Escribe tu mensaje..."
-              ></textarea>
+              />
             </div>
 
             <button className="btn btn-primary w-100">

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -23,10 +23,11 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* BOTÓN CUSTOM (NO HAMBURGUESA) */}
+          {/* BOTÓN TOGGLE */}
           <button
             className={`nav-toggle ${open ? "open" : ""}`}
             onClick={() => setOpen(!open)}
+            aria-label="Menu"
           >
             <span></span>
             <span></span>
@@ -36,12 +37,15 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* MOBILE PANEL */}
+      {/* MOBILE MENU */}
       <div className={`mobile-menu ${open ? "show" : ""}`}>
         <a href="#" onClick={() => setOpen(false)}>Inicio</a>
         <a href="#" onClick={() => setOpen(false)}>Servicios</a>
         <a href="#" onClick={() => setOpen(false)}>Contacto</a>
-        <a href="#" className="cta-mobile">Cotizar</a>
+
+        <a href="#" className="cta-mobile" onClick={() => setOpen(false)}>
+          Cotizar
+        </a>
       </div>
     </>
   );

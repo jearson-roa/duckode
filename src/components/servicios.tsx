@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../App.css";
 
 const Servicios = () => {
@@ -25,7 +25,7 @@ const Servicios = () => {
     },
   ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number>(0);
 
   return (
     <section className="services-mini py-5">
@@ -42,6 +42,7 @@ const Servicios = () => {
 
         <div className="services-mini-layout">
 
+          {/* LISTA */}
           <div className="services-list-mini">
             {servicios.map((s, i) => (
               <div
@@ -56,6 +57,7 @@ const Servicios = () => {
             ))}
           </div>
 
+          {/* PREVIEW */}
           <div className="service-preview">
             <i className={`bi ${servicios[active].icono}`}></i>
             <h3>{servicios[active].titulo}</h3>

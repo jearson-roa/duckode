@@ -1,18 +1,17 @@
-import Navbar from './components/Navbar';
-import Hero from './components/hero';
-import Contacto from './components/Contacto';
-import Servicios from './components/servicios';
-import QuienSoy from './components/QuienSoy';
+import Navbar from "./components/Navbar.tsx";
+import Hero from "./components/hero.tsx";
+import Contacto from "./components/Contacto.tsx";
+import Servicios from "./components/servicios.tsx";
+import QuienSoy from "./components/QuienSoy.tsx";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Hero />
-      < Servicios />
-      < QuienSoy />
+      <Servicios />
+      <QuienSoy />
       <Contacto />
-
     </div>
   );
 }
