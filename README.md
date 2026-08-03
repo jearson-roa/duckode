@@ -75,3 +75,4 @@ export default defineConfig([
 ```
 # duckode
 # web
+# duckode
