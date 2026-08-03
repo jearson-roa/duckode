@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.webp";
 
 function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(true);
 
     const menuItems = [
         { name: "Inicio", path: "/" },
@@ -14,9 +15,44 @@ function Navbar() {
         { name: "Contacto", path: "/contacto" },
     ];
 
+    useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+        if (window.scrollY > lastScrollY) {
+            // Bajando
+            setShowNavbar(false);
+        } else {
+            // Subiendo
+            setShowNavbar(true);
+        }
+
+        lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+        window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
+
 
     return (
-        <nav className="w-full shadow-md bg-color">
+        <nav
+    className={`
+        fixed
+        top-0
+        left-0
+        z-50
+        w-full
+        shadow-md
+        bg-color
+        transition-transform
+        duration-300
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+    `}
+>
 
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 

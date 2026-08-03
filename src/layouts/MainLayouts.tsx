@@ -9,7 +9,7 @@ function MainLayouts (){
         
         <Navbar />
 
-        <main>
+        <main className="pt-20">
             <Outlet />
         </main>
         
