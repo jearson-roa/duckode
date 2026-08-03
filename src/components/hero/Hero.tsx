@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import duck1 from "../../assets/duck-1.webp";
+import "./Hero.css";
 
 
 function Hero() {
@@ -40,28 +41,10 @@ function Hero() {
                     text-white
                 ">
 
-                    <h1 className="
-                        max-w-xl
-                        text-4xl
-                        font-bold
-                        leading-tight
-                        md:text-6xl
-                    ">
-                        Soluciones profesionales
-                        para tu empresa
-                    </h1>
+                    <h1 className="texto-principal">Duckode - Desarrollo web y software a medida</h1>
 
 
-                    <p className="
-                        mt-6
-                        max-w-lg
-                        text-lg
-                        text-slate-200
-                    ">
-                        Entregamos servicios de calidad,
-                        compromiso y experiencia para
-                        nuestros clientes.
-                    </p>
+                    <p className="texto-parrafo">Creamos soluciones digitales a medida para potenciar tu negocio. Diseño moderno, codigo limpio y soporte continuo para tu empresa crezca en la era digital</p>
 
 
                     <Link
@@ -80,11 +63,9 @@ function Hero() {
                             hover:-translate-y-1
                             hover:bg-amber-400
                         "
-                    >
-                        Solicitar cotización
-                    </Link>
-
-                </div>
+                    > Solicita tu consulta gratuita 
+                    <span className="material-symbols-outlined">arrow_forward</span></Link>
+                    </div>
 
 
 
