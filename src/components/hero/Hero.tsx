@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import duck1 from "../../assets/duck-1.png";
+import duck1 from "../../assets/duck-1.webp";
 
 
 function Hero() {
