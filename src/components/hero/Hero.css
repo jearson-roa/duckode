@@ -1,3 +1,11 @@
+.bg-hero {
+    background: linear-gradient(
+        180deg,
+        #2573eb 15%,
+        #1e3a8a 80%
+    );
+}
+
 .texto-principal {
     font-size: 3rem;
     font-weight: bold;
@@ -9,8 +17,6 @@
     margin-top: 1rem;
     color: #f3f4f6;
 }
-
-
 
 .material-symbols-outlined {
     position: relative;

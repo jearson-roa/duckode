@@ -8,6 +8,7 @@ function Hero() {
     return (
         <section
             className="
+                bg-hero
                 relative
                 min-h-[600px]
                 bg-cover
