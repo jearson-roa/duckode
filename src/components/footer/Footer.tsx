@@ -70,15 +70,9 @@ function Footer() {
                     <p className="text-slate-300">
                         📞 +56 9 2035 8939
                     </p>
-
-                    <p className="text-slate-300">
-                        ✉ contacto@duckode.cl
-                    </p>
-
                     <p className="text-slate-300">
                         📍 Santiago, Chile
                     </p>
-
                 </div>
 
             </div>

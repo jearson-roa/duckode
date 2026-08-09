@@ -20,7 +20,7 @@ function CardService() {
     ];
 
     return (
-        <section className="bg-gray-50 py-20">
+        <section id="servicios" className="bg-gray-50 py-20">
             <div className="mx-auto max-w-7xl px-6">
 
                 <div className="mb-12 text-center">
