@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import duck1 from "../../assets/duck-1.webp";
+import Contacto from "../contacto/Contacto";
 import "./Hero.css";
 
 
@@ -50,7 +51,7 @@ function Hero() {
 
 
                     <Link
-                        to="/contacto"
+                        to="/Contacto"
                         className="
                             mt-8
                             inline-block
