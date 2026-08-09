@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.webp";
@@ -16,64 +15,88 @@ function Navbar() {
     ];
 
     useEffect(() => {
-    let lastScrollY = window.scrollY;
 
-    const handleScroll = () => {
-        if (window.scrollY > lastScrollY) {
-            // Bajando
-            setShowNavbar(false);
-        } else {
-            // Subiendo
-            setShowNavbar(true);
-        }
+        let lastScrollY = window.scrollY;
 
-        lastScrollY = window.scrollY;
-    };
+        const handleScroll = () => {
 
-    window.addEventListener("scroll", handleScroll);
+            if (window.scrollY > lastScrollY && window.scrollY > 80) {
+                setShowNavbar(false);
+                setMenuOpen(false);
+            } else {
+                setShowNavbar(true);
+            }
 
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
-}, []);
+            lastScrollY = window.scrollY;
+        };
 
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+
+    }, []);
 
     return (
         <nav
-    className={`
-        fixed
-        top-0
-        left-0
-        z-50
-        w-full
-        shadow-md
-        bg-color
-        transition-transform
-        duration-300
-        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-    `}
->
+            className={`
+                fixed
+                top-0
+                left-0
+                z-50
+                w-full
+                bg-color
+                shadow-md
+                transition-transform
+                duration-300
+                ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+            `}
+        >
 
-            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+            {/* CONTENEDOR PRINCIPAL */}
+            <div className="
+                mx-auto
+                flex
+                h-20
+                max-w-7xl
+                items-center
+                justify-between
+                px-4
+                sm:px-6
+            ">
 
-                {/* Logo */}
-                <Link 
-                    to="/"
-                    className="transition duration-300 hover:scale-105"
+                {/* LOGO */}
+                <a
+                    href="#inicio"
+                    onClick={() => setMenuOpen(false)}
+                    className="
+                        shrink-0
+                        transition
+                        duration-300
+                        hover:scale-105
+                    "
                 >
-                    <img 
+                    <img
                         className="logo"
                         src={logo}
-                        alt="Logo"
+                        alt="Duckode"
                     />
-                </Link>
+                </a>
 
 
-                {/* Menu escritorio */}
-                <ul className="hidden md:flex items-center gap-8">
+                {/* MENÚ ESCRITORIO */}
+                <ul className="
+                    hidden
+                    md:flex
+                    items-center
+                    gap-8
+                ">
 
                     {menuItems.map((item) => (
+
                         <li key={item.name}>
+
                             <a
                                 href={item.path}
                                 className="
@@ -93,15 +116,19 @@ function Navbar() {
                             >
                                 {item.name}
                             </a>
+
                         </li>
+
                     ))}
 
                 </ul>
 
 
-                {/* Botón escritorio */}
+                {/* BOTÓN ESCRITORIO */}
                 <a
                     href="https://wa.me/56920358939"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="
                         hidden
                         md:block
@@ -109,6 +136,7 @@ function Navbar() {
                         bg-amber-300
                         px-5
                         py-2
+                        font-semibold
                         text-sky-900
                         shadow-md
                         transition-all
@@ -122,33 +150,42 @@ function Navbar() {
                 </a>
 
 
-                {/* Botón hamburguesa */}
+                {/* BOTÓN HAMBURGUESA */}
                 <button
-                    className="
-                        md:hidden
-                        flex
-                        flex-col
-                        gap-1
-                        transition-all
-                    "
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded={menuOpen}
                     onClick={() => setMenuOpen(!menuOpen)}
+                    className="
+                        flex
+                        h-10
+                        w-10
+                        flex-col
+                        items-center
+                        justify-center
+                        gap-1
+                        rounded-lg
+                        md:hidden
+                    "
                 >
 
-                    <span 
+                    <span
                         className={`
-                            h-1 
-                            w-7 
+                            h-1
+                            w-7
+                            rounded-full
                             bg-white
                             transition-all
                             duration-300
-                            ${menuOpen ? "rotate-45 translate-y-2" : ""}
+                            ${menuOpen ? "translate-y-2 rotate-45" : ""}
                         `}
                     />
 
-                    <span 
+                    <span
                         className={`
-                            h-1 
-                            w-7 
+                            h-1
+                            w-7
+                            rounded-full
                             bg-white
                             transition-all
                             duration-300
@@ -156,14 +193,15 @@ function Navbar() {
                         `}
                     />
 
-                    <span 
+                    <span
                         className={`
-                            h-1 
-                            w-7 
+                            h-1
+                            w-7
+                            rounded-full
                             bg-white
                             transition-all
                             duration-300
-                            ${menuOpen ? "-rotate-45 -translate-y-2" : ""}
+                            ${menuOpen ? "-translate-y-2 -rotate-45" : ""}
                         `}
                     />
 
@@ -172,47 +210,93 @@ function Navbar() {
             </div>
 
 
-            {/* Menu móvil animado */}
+            {/* MENÚ MÓVIL */}
             <div
                 className={`
                     md:hidden
                     overflow-hidden
+                    border-t
+                    border-white/10
                     transition-all
-                    duration-500
+                    duration-300
                     ease-in-out
                     ${
                         menuOpen
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
+                            ? "max-h-[500px] opacity-100"
+                            : "max-h-0 opacity-0"
                     }
                 `}
             >
 
-                <ul className="flex flex-col gap-5 px-6 pb-6 pt-3">
+                <div className="
+                    px-4
+                    pb-6
+                    pt-4
+                    sm:px-6
+                ">
 
-                    {menuItems.map((item) => (
+                    <ul className="
+                        flex
+                        flex-col
+                        gap-1
+                    ">
 
-                        <li key={item.name}>
+                        {menuItems.map((item) => (
 
-                            <Link
-                                to={item.path}
-                                onClick={() => setMenuOpen(false)}
-                                className="
-                                    block
-                                    text-white
-                                    transition
-                                    duration-300
-                                    hover:translate-x-2
-                                "
-                            >
-                                {item.name}
-                            </Link>
+                            <li key={item.name}>
 
-                        </li>
+                                <a
+                                    href={item.path}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="
+                                        block
+                                        rounded-lg
+                                        px-4
+                                        py-3
+                                        text-white
+                                        transition-all
+                                        duration-300
+                                        hover:bg-white/10
+                                        hover:translate-x-1
+                                    "
+                                >
+                                    {item.name}
+                                </a>
 
-                    ))}
+                            </li>
 
-                </ul>
+                        ))}
+
+                    </ul>
+
+
+                    {/* BOTÓN WHATSAPP MÓVIL */}
+                    <a
+                        href="https://wa.me/56920358939"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMenuOpen(false)}
+                        className="
+                            mt-4
+                            block
+                            w-full
+                            rounded-lg
+                            bg-amber-300
+                            px-5
+                            py-3
+                            text-center
+                            font-semibold
+                            text-sky-900
+                            shadow-md
+                            transition-all
+                            duration-300
+                            hover:bg-amber-400
+                        "
+                    >
+                        Habla ahora
+                    </a>
+
+                </div>
 
             </div>
 
