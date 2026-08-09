@@ -2,6 +2,13 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+import {
+    FaInstagram,
+    FaFacebook,
+    FaLinkedin,
+    FaWhatsapp,
+} from "react-icons/fa";
+
 function Contacto() {
 
     const form = useRef<HTMLFormElement>(null);
@@ -64,41 +71,51 @@ function Contacto() {
 
             <div className="mx-auto max-w-7xl">
 
-                {/* Encabezado */}
+                {/* =====================================
+                    ENCABEZADO
+                ====================================== */}
 
-                <div className="
-                    mx-auto
-                    max-w-3xl
-                    text-center
-                ">
+                <div
+                    className="
+                        mx-auto
+                        max-w-3xl
+                        text-center
+                    "
+                >
 
-                    <span className="
-                        text-sm
-                        font-semibold
-                        uppercase
-                        tracking-widest
-                        text-blue-600
-                    ">
+                    <span
+                        className="
+                            text-sm
+                            font-semibold
+                            uppercase
+                            tracking-widest
+                            text-blue-600
+                        "
+                    >
                         Contacto
                     </span>
 
-                    <h2 className="
-                        mt-3
-                        text-3xl
-                        font-bold
-                        text-slate-900
-                        md:text-4xl
-                    ">
+                    <h2
+                        className="
+                            mt-3
+                            text-3xl
+                            font-bold
+                            text-slate-900
+                            md:text-4xl
+                        "
+                    >
                         Hablemos de tu proyecto
                     </h2>
 
-                    <p className="
-                        mt-5
-                        text-base
-                        leading-7
-                        text-slate-600
-                        md:text-lg
-                    ">
+                    <p
+                        className="
+                            mt-5
+                            text-base
+                            leading-7
+                            text-slate-600
+                            md:text-lg
+                        "
+                    >
                         ¿Tienes una idea o necesitas una solución
                         digital para tu negocio? Cuéntanos y
                         conversemos sobre tu proyecto.
@@ -107,65 +124,82 @@ function Contacto() {
                 </div>
 
 
-                {/* Contenido */}
+                {/* =====================================
+                    CONTENIDO
+                ====================================== */}
 
-                <div className="
-                    mt-12
-                    grid
-                    gap-10
-                    lg:grid-cols-5
-                ">
+                <div
+                    className="
+                        mt-12
+                        grid
+                        gap-10
+                        lg:grid-cols-5
+                    "
+                >
 
 
                     {/* =====================================
                         INFORMACIÓN DE CONTACTO
                     ====================================== */}
 
-                    <div className="
-                        lg:col-span-2
-                        rounded-2xl
-                        bg-slate-900
-                        p-8
-                        text-white
-                        shadow-lg
-                        md:p-10
-                    ">
+                    <div
+                        className="
+                            lg:col-span-2
+                            rounded-2xl
+                            bg-slate-900
+                            p-8
+                            text-white
+                            shadow-lg
+                            md:p-10
+                        "
+                    >
 
-                        <span className="
-                            material-symbols-outlined
-                            text-4xl
-                            text-amber-300
-                        ">
+                        {/* Icono principal */}
+
+                        <span
+                            className="
+                                material-symbols-outlined
+                                text-4xl
+                                text-amber-300
+                            "
+                        >
                             forum
                         </span>
 
 
-                        <h3 className="
-                            mt-5
-                            text-2xl
-                            font-bold
-                        ">
+                        <h3
+                            className="
+                                mt-5
+                                text-2xl
+                                font-bold
+                            "
+                        >
                             Conversemos
                         </h3>
 
 
-                        <p className="
-                            mt-4
-                            leading-7
-                            text-slate-300
-                        ">
+                        <p
+                            className="
+                                mt-4
+                                leading-7
+                                text-slate-300
+                            "
+                        >
                             Estamos disponibles para conocer tu
                             proyecto, resolver tus dudas y encontrar
                             la mejor solución para tu negocio.
                         </p>
 
 
-                        {/* WhatsApp */}
+                        {/* =====================================
+                            WHATSAPP
+                        ====================================== */}
 
                         <a
                             href="https://wa.me/56920358939"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="Contactar por WhatsApp"
                             className="
                                 mt-8
                                 flex
@@ -180,26 +214,45 @@ function Contacto() {
                             "
                         >
 
-                            <span className="
-                                material-symbols-outlined
-                                text-3xl
-                                text-green-400
-                            ">
-                                chat
-                            </span>
+                            <div
+                                className="
+                                    flex
+                                    h-12
+                                    w-12
+                                    shrink-0
+                                    items-center
+                                    justify-center
+                                    rounded-lg
+                                    bg-green-500/10
+                                "
+                            >
+
+                                <FaWhatsapp
+                                    className="
+                                        text-3xl
+                                        text-green-400
+                                    "
+                                />
+
+                            </div>
+
 
                             <div>
 
-                                <p className="
-                                    text-sm
-                                    text-slate-400
-                                ">
+                                <p
+                                    className="
+                                        text-sm
+                                        text-slate-400
+                                    "
+                                >
                                     WhatsApp
                                 </p>
 
-                                <p className="
-                                    font-semibold
-                                ">
+                                <p
+                                    className="
+                                        font-semibold
+                                    "
+                                >
                                     +56 9 2035 8939
                                 </p>
 
@@ -208,29 +261,37 @@ function Contacto() {
                         </a>
 
 
-                        {/* Redes sociales */}
+                        {/* =====================================
+                            REDES SOCIALES
+                        ====================================== */}
 
                         <div className="mt-8">
 
-                            <p className="
-                                text-sm
-                                font-semibold
-                                text-slate-300
-                            ">
+                            <p
+                                className="
+                                    text-sm
+                                    font-semibold
+                                    text-slate-300
+                                "
+                            >
                                 También puedes encontrarnos en
                             </p>
 
 
-                            <div className="
-                                mt-4
-                                flex
-                                gap-3
-                            ">
+                            <div
+                                className="
+                                    mt-4
+                                    flex
+                                    gap-3
+                                "
+                            >
 
-                                {/* Instagram */}
+                                {/* =================================
+                                    INSTAGRAM
+                                ================================== */}
 
                                 <a
-                                    href="#"
+                                    href="https://www.instagram.com/duckode.cl"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Instagram Duckode"
@@ -242,25 +303,27 @@ function Contacto() {
                                         justify-center
                                         rounded-lg
                                         bg-white/10
+                                        text-white
                                         transition
+                                        duration-300
                                         hover:-translate-y-1
                                         hover:bg-pink-500
                                     "
                                 >
 
-                                    <span className="
-                                        material-symbols-outlined
-                                    ">
-                                        photo_camera
-                                    </span>
+                                    <FaInstagram
+                                        className="text-xl"
+                                    />
 
                                 </a>
 
 
-                                {/* Facebook */}
+                                {/* =================================
+                                    FACEBOOK
+                                ================================== */}
 
                                 <a
-                                    href="#"
+                                    href="https://www.facebook.com/share/1CMX163cki/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Facebook Duckode"
@@ -272,25 +335,27 @@ function Contacto() {
                                         justify-center
                                         rounded-lg
                                         bg-white/10
+                                        text-white
                                         transition
+                                        duration-300
                                         hover:-translate-y-1
                                         hover:bg-blue-600
                                     "
                                 >
 
-                                    <span className="
-                                        material-symbols-outlined
-                                    ">
-                                        public
-                                    </span>
+                                    <FaFacebook
+                                        className="text-xl"
+                                    />
 
                                 </a>
 
 
-                                {/* LinkedIn */}
+                                {/* =================================
+                                    LINKEDIN
+                                ================================== */}
 
                                 <a
-                                    href="#"
+                                    href="https://www.linkedin.com/in/jearson-roa-leiva-885aa22b4"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
@@ -302,17 +367,17 @@ function Contacto() {
                                         justify-center
                                         rounded-lg
                                         bg-white/10
+                                        text-white
                                         transition
+                                        duration-300
                                         hover:-translate-y-1
                                         hover:bg-blue-700
                                     "
                                 >
 
-                                    <span className="
-                                        material-symbols-outlined
-                                    ">
-                                        business
-                                    </span>
+                                    <FaLinkedin
+                                        className="text-xl"
+                                    />
 
                                 </a>
 
@@ -321,26 +386,34 @@ function Contacto() {
                         </div>
 
 
-                        {/* Fundador */}
+                        {/* =====================================
+                            EQUIPO
+                        ====================================== */}
 
-                        <div className="
-                            mt-8
-                            border-t
-                            border-white/10
-                            pt-6
-                        ">
+                        <div
+                            className="
+                                mt-8
+                                border-t
+                                border-white/10
+                                pt-6
+                            "
+                        >
 
-                            <p className="
-                                text-sm
-                                text-slate-400
-                            ">
+                            <p
+                                className="
+                                    text-sm
+                                    text-slate-400
+                                "
+                            >
                                 ¿Quieres conocer más sobre nosotros?
                             </p>
 
-                            <p className="
-                                mt-1
-                                font-semibold
-                            ">
+                            <p
+                                className="
+                                    mt-1
+                                    font-semibold
+                                "
+                            >
                                 Conoce al equipo de Duckode
                             </p>
 
@@ -369,13 +442,19 @@ function Contacto() {
                             "
                         >
 
-                            {/* Nombre + correo */}
+                            {/* =================================
+                                NOMBRE + CORREO
+                            ================================== */}
 
-                            <div className="
-                                grid
-                                gap-6
-                                md:grid-cols-2
-                            ">
+                            <div
+                                className="
+                                    grid
+                                    gap-6
+                                    md:grid-cols-2
+                                "
+                            >
+
+                                {/* Nombre */}
 
                                 <div>
 
@@ -403,10 +482,13 @@ function Contacto() {
                                             rounded-lg
                                             border
                                             border-slate-300
+                                            bg-white
                                             px-4
                                             py-3
+                                            text-slate-900
                                             outline-none
                                             transition
+                                            placeholder:text-slate-400
                                             focus:border-blue-500
                                             focus:ring-2
                                             focus:ring-blue-100
@@ -415,6 +497,8 @@ function Contacto() {
 
                                 </div>
 
+
+                                {/* Correo */}
 
                                 <div>
 
@@ -442,10 +526,13 @@ function Contacto() {
                                             rounded-lg
                                             border
                                             border-slate-300
+                                            bg-white
                                             px-4
                                             py-3
+                                            text-slate-900
                                             outline-none
                                             transition
+                                            placeholder:text-slate-400
                                             focus:border-blue-500
                                             focus:ring-2
                                             focus:ring-blue-100
@@ -457,14 +544,20 @@ function Contacto() {
                             </div>
 
 
-                            {/* Teléfono + servicio */}
+                            {/* =================================
+                                TELÉFONO + SERVICIO
+                            ================================== */}
 
-                            <div className="
-                                mt-6
-                                grid
-                                gap-6
-                                md:grid-cols-2
-                            ">
+                            <div
+                                className="
+                                    mt-6
+                                    grid
+                                    gap-6
+                                    md:grid-cols-2
+                                "
+                            >
+
+                                {/* Teléfono */}
 
                                 <div>
 
@@ -491,10 +584,13 @@ function Contacto() {
                                             rounded-lg
                                             border
                                             border-slate-300
+                                            bg-white
                                             px-4
                                             py-3
+                                            text-slate-900
                                             outline-none
                                             transition
+                                            placeholder:text-slate-400
                                             focus:border-blue-500
                                             focus:ring-2
                                             focus:ring-blue-100
@@ -503,6 +599,8 @@ function Contacto() {
 
                                 </div>
 
+
+                                {/* Servicio */}
 
                                 <div>
 
@@ -529,8 +627,10 @@ function Contacto() {
                                             rounded-lg
                                             border
                                             border-slate-300
+                                            bg-white
                                             px-4
                                             py-3
+                                            text-slate-900
                                             outline-none
                                             transition
                                             focus:border-blue-500
@@ -581,7 +681,9 @@ function Contacto() {
                             </div>
 
 
-                            {/* Mensaje */}
+                            {/* =================================
+                                MENSAJE
+                            ================================== */}
 
                             <div className="mt-6">
 
@@ -610,10 +712,13 @@ function Contacto() {
                                         rounded-lg
                                         border
                                         border-slate-300
+                                        bg-white
                                         px-4
                                         py-3
+                                        text-slate-900
                                         outline-none
                                         transition
+                                        placeholder:text-slate-400
                                         focus:border-blue-500
                                         focus:ring-2
                                         focus:ring-blue-100
@@ -623,7 +728,9 @@ function Contacto() {
                             </div>
 
 
-                            {/* Botón */}
+                            {/* =================================
+                                BOTÓN
+                            ================================== */}
 
                             <button
                                 type="submit"
@@ -642,77 +749,98 @@ function Contacto() {
                                     font-semibold
                                     text-white
                                     shadow-md
-                                    transition
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
                                     hover:bg-blue-700
+                                    hover:shadow-lg
                                     disabled:cursor-not-allowed
                                     disabled:opacity-60
                                 "
                             >
 
                                 {enviando ? (
+
                                     <>
-                                        <span className="
-                                            material-symbols-outlined
-                                            animate-spin
-                                        ">
+                                        <span
+                                            className="
+                                                material-symbols-outlined
+                                                animate-spin
+                                            "
+                                        >
                                             progress_activity
                                         </span>
 
                                         Enviando...
                                     </>
+
                                 ) : (
+
                                     <>
-                                        <span className="
-                                            material-symbols-outlined
-                                        ">
+                                        <span
+                                            className="
+                                                material-symbols-outlined
+                                            "
+                                        >
                                             send
                                         </span>
 
                                         Enviar mensaje
                                     </>
+
                                 )}
 
                             </button>
 
 
-                            {/* Éxito */}
+                            {/* =================================
+                                MENSAJE DE ÉXITO
+                            ================================== */}
 
                             {enviado && (
 
-                                <div className="
-                                    mt-5
-                                    rounded-lg
-                                    bg-green-50
-                                    px-4
-                                    py-3
-                                    text-center
-                                    text-sm
-                                    font-medium
-                                    text-green-700
-                                ">
+                                <div
+                                    className="
+                                        mt-5
+                                        rounded-lg
+                                        bg-green-50
+                                        px-4
+                                        py-3
+                                        text-center
+                                        text-sm
+                                        font-medium
+                                        text-green-700
+                                    "
+                                >
                                     ¡Mensaje enviado correctamente!
+                                    <br />
                                     Nos pondremos en contacto contigo.
                                 </div>
 
                             )}
 
 
-                            {/* Error */}
+                            {/* =================================
+                                MENSAJE DE ERROR
+                            ================================== */}
 
                             {error && (
 
-                                <div className="
-                                    mt-5
-                                    rounded-lg
-                                    bg-red-50
-                                    px-4
-                                    py-3
-                                    text-center
-                                    text-sm
-                                    font-medium
-                                    text-red-700
-                                ">
+                                <div
+                                    className="
+                                        mt-5
+                                        rounded-lg
+                                        bg-red-50
+                                        px-4
+                                        py-3
+                                        text-center
+                                        text-sm
+                                        font-medium
+                                        text-red-700
+                                    "
+                                >
                                     No pudimos enviar tu mensaje.
+                                    <br />
                                     Inténtalo nuevamente.
                                 </div>
 
