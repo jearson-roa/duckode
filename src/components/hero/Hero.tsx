@@ -7,6 +7,7 @@ function Hero() {
 
     return (
         <section
+            id="inicio"
             className="
                 bg-hero
                 relative

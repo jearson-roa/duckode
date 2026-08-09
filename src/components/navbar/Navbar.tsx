@@ -9,10 +9,10 @@ function Navbar() {
     const [showNavbar, setShowNavbar] = useState(true);
 
     const menuItems = [
-        { name: "Inicio", path: "/" },
-        { name: "Nosotros", path: "/nosotros" },
-        { name: "Servicios", path: "/servicios" },
-        { name: "Contacto", path: "/contacto" },
+        { name: "Inicio", path: "#inicio" },
+        { name: "Nosotros", path: "#nosotros" },
+        { name: "Servicios", path: "#servicios" },
+        { name: "Contacto", path: "#contacto" },
     ];
 
     useEffect(() => {
@@ -74,8 +74,8 @@ function Navbar() {
 
                     {menuItems.map((item) => (
                         <li key={item.name}>
-                            <Link
-                                to={item.path}
+                            <a
+                                href={item.path}
                                 className="
                                     link-color
                                     relative
@@ -92,7 +92,7 @@ function Navbar() {
                                 "
                             >
                                 {item.name}
-                            </Link>
+                            </a>
                         </li>
                     ))}
 
@@ -100,8 +100,8 @@ function Navbar() {
 
 
                 {/* Botón escritorio */}
-                <Link
-                    to="/contacto"
+                <a
+                    href="https://wa.me/56920358939"
                     className="
                         hidden
                         md:block
@@ -119,7 +119,7 @@ function Navbar() {
                     "
                 >
                     Habla ahora
-                </Link>
+                </a>
 
 
                 {/* Botón hamburguesa */}
