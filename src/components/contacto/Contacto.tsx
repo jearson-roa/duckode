@@ -24,11 +24,11 @@ function Contacto() {
         try {
 
             await emailjs.sendForm(
-                "TU_SERVICE_ID",
-                "TU_TEMPLATE_ID",
+                "service_38x8zku",
+                "template_ag43exp",
                 form.current,
                 {
-                    publicKey: "TU_PUBLIC_KEY",
+                    publicKey: "AwdYG5DMkB7sDrfeu",
                 }
             );
 
