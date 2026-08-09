@@ -1,35 +1,20 @@
-import { useState, useEffect } from "react";
-import "./Navbar.css";
+
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FaArrowRight, FaBars, FaXmark } from "react-icons/fa6";
 import logo from "../../assets/logo.webp";
-import { Link } from "react-router-dom";
 
 function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
-    const [showNavbar, setShowNavbar] = useState(true);
+    const [scrolled, setScrolled] = useState(false);
 
-    const menuItems = [
-        { name: "Inicio", path: "/" },
-        { name: "Nosotros", path: "/nosotros" },
-        { name: "Portafolio", path: "/portafolio" },
-        { name: "Servicios", path: "#servicios" },
-        { name: "Contacto", path: "/contacto" },
-    ];
+    const location = useLocation();
 
     useEffect(() => {
 
-        let lastScrollY = window.scrollY;
-
         const handleScroll = () => {
-
-            if (window.scrollY > lastScrollY && window.scrollY > 80) {
-                setShowNavbar(false);
-                setMenuOpen(false);
-            } else {
-                setShowNavbar(true);
-            }
-
-            lastScrollY = window.scrollY;
+            setScrolled(window.scrollY > 30);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -40,269 +25,387 @@ function Navbar() {
 
     }, []);
 
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [location.pathname]);
+
+    const menuItems = [
+        { name: "Inicio", path: "/" },
+        { name: "Nosotros", path: "/nosotros" },
+        { name: "Portafolio", path: "/portafolio" },
+        { name: "Servicios", path: "/servicios" },
+        { name: "Contacto", path: "/contacto" },
+    ];
+
     return (
-        <nav
+
+        <header
             className={`
                 fixed
-                top-0
                 left-0
+                top-0
                 z-50
                 w-full
-                bg-color
-                shadow-md
-                transition-transform
-                duration-300
-                ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+                px-4
+                pt-3
+                transition-all
+                duration-500
+                sm:px-6
+                lg:px-8
             `}
         >
 
-            {/* CONTENEDOR PRINCIPAL */}
-            <div className="
-                mx-auto
-                flex
-                h-20
-                max-w-7xl
-                items-center
-                justify-between
-                px-4
-                sm:px-6
-            ">
-
-                {/* LOGO */}
-                <Link
-                    to="/"
-                    onClick={() => setMenuOpen(false)}
-                    className="
-                        shrink-0
-                        transition
-                        duration-300
-                        hover:scale-105
-                    "
-                >
-                    <img
-                        className="logo"
-                        src={logo}
-                        alt="Duckode"
-                    />
-                </Link>
-
-
-                {/* MENÚ ESCRITORIO */}
-                <ul className="
-                    hidden
-                    md:flex
-                    items-center
-                    gap-8
-                ">
-
-                    {menuItems.map((item) => (
-
-                        <li key={item.name}>
-
-                            <a
-                                href={item.path}
-                                className="
-                                    link-color
-                                    relative
-                                    transition-all
-                                    duration-300
-                                    hover:text-blue-600
-                                    after:absolute
-                                    after:left-0
-                                    after:-bottom-2
-                                    after:h-[2px]
-                                    after:w-0
-                                    after:transition-all
-                                    hover:after:w-full
-                                "
-                            >
-                                {item.name}
-                            </a>
-
-                        </li>
-
-                    ))}
-
-                </ul>
-
-
-                {/* BOTÓN ESCRITORIO */}
-                <a
-                    href="https://wa.me/56920358939"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                        hidden
-                        md:block
-                        rounded-lg
-                        bg-amber-300
-                        px-5
-                        py-2
-                        font-semibold
-                        text-sky-900
-                        shadow-md
-                        transition-all
-                        duration-300
-                        hover:-translate-y-1
-                        hover:bg-amber-400
-                        hover:shadow-lg
-                    "
-                >
-                    Habla ahora
-                </a>
-
-
-                {/* BOTÓN HAMBURGUESA */}
-                <button
-                    type="button"
-                    aria-label="Abrir menú"
-                    aria-expanded={menuOpen}
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    className="
-                        flex
-                        h-10
-                        w-10
-                        flex-col
-                        items-center
-                        justify-center
-                        gap-1
-                        rounded-lg
-                        md:hidden
-                    "
-                >
-
-                    <span
-                        className={`
-                            h-1
-                            w-7
-                            rounded-full
-                            bg-white
-                            transition-all
-                            duration-300
-                            ${menuOpen ? "translate-y-2 rotate-45" : ""}
-                        `}
-                    />
-
-                    <span
-                        className={`
-                            h-1
-                            w-7
-                            rounded-full
-                            bg-white
-                            transition-all
-                            duration-300
-                            ${menuOpen ? "opacity-0" : ""}
-                        `}
-                    />
-
-                    <span
-                        className={`
-                            h-1
-                            w-7
-                            rounded-full
-                            bg-white
-                            transition-all
-                            duration-300
-                            ${menuOpen ? "-translate-y-2 -rotate-45" : ""}
-                        `}
-                    />
-
-                </button>
-
-            </div>
-
-
-            {/* MENÚ MÓVIL */}
-            <div
+            <nav
                 className={`
-                    md:hidden
-                    overflow-hidden
-                    border-t
-                    border-white/10
+                    mx-auto
+                    max-w-7xl
+                    rounded-2xl
+                    border
                     transition-all
-                    duration-300
-                    ease-in-out
+                    duration-500
+
                     ${
-                        menuOpen
-                            ? "max-h-[500px] opacity-100"
-                            : "max-h-0 opacity-0"
+                        scrolled
+                            ? `
+                                border-white/10
+                                bg-slate-950/90
+                                shadow-xl
+                                shadow-black/10
+                                backdrop-blur-xl
+                              `
+                            : `
+                                border-white/10
+                                bg-slate-900/70
+                                backdrop-blur-md
+                              `
                     }
                 `}
             >
 
+                {/* CONTENEDOR */}
+
                 <div className="
+                    flex
+                    h-[68px]
+                    items-center
+                    justify-between
                     px-4
-                    pb-6
-                    pt-4
                     sm:px-6
                 ">
 
-                    <ul className="
-                        flex
-                        flex-col
+
+                    {/* LOGO */}
+
+                    <Link
+                        to="/"
+                        className="
+                            group
+                            flex
+                            shrink-0
+                            items-center
+                        "
+                    >
+
+                        <img
+                            src={logo}
+                            alt="Duckode"
+                            className="
+                                h-10
+                                w-auto
+                                object-contain
+                                transition
+                                duration-300
+                                group-hover:scale-105
+                            "
+                        />
+
+                    </Link>
+
+
+                    {/* MENU DESKTOP */}
+
+                    <div className="
+                        hidden
+                        items-center
                         gap-1
+                        rounded-xl
+                        bg-white/5
+                        p-1
+                        md:flex
                     ">
 
-                        {menuItems.map((item) => (
+                        {menuItems.map((item) => {
 
-                            <li key={item.name}>
+                            const active =
+                                location.pathname === item.path;
 
-                                <a
-                                    href={item.path}
-                                    onClick={() => setMenuOpen(false)}
-                                    className="
-                                        block
+                            return (
+
+                                <Link
+                                    key={item.name}
+                                    to={item.path}
+                                    className={`
+                                        relative
                                         rounded-lg
                                         px-4
-                                        py-3
-                                        text-white
+                                        py-2
+                                        text-sm
+                                        font-medium
                                         transition-all
                                         duration-300
-                                        hover:bg-white/10
-                                        hover:translate-x-1
-                                    "
+
+                                        ${
+                                            active
+                                                ? `
+                                                    bg-white/10
+                                                    text-white
+                                                  `
+                                                : `
+                                                    text-slate-300
+                                                    hover:bg-white/5
+                                                    hover:text-white
+                                                  `
+                                        }
+                                    `}
                                 >
+
                                     {item.name}
-                                </a>
 
-                            </li>
+                                    {/* Indicador */}
 
-                        ))}
+                                    <span
+                                        className={`
+                                            absolute
+                                            bottom-1
+                                            left-1/2
+                                            h-0.5
+                                            -translate-x-1/2
+                                            rounded-full
+                                            bg-amber-300
+                                            transition-all
+                                            duration-300
 
-                    </ul>
+                                            ${
+                                                active
+                                                    ? "w-4"
+                                                    : "w-0"
+                                            }
+                                        `}
+                                    />
+
+                                </Link>
+
+                            );
+
+                        })}
+
+                    </div>
 
 
-                    {/* BOTÓN WHATSAPP MÓVIL */}
+                    {/* CTA */}
+
                     <a
                         href="https://wa.me/56920358939"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => setMenuOpen(false)}
                         className="
-                            mt-4
-                            block
-                            w-full
-                            rounded-lg
+                            group
+                            hidden
+                            items-center
+                            gap-2
+                            rounded-xl
                             bg-amber-300
-                            px-5
-                            py-3
-                            text-center
-                            font-semibold
-                            text-sky-900
-                            shadow-md
+                            px-4
+                            py-2.5
+                            text-sm
+                            font-bold
+                            text-slate-900
+                            shadow-lg
+                            shadow-amber-300/10
                             transition-all
                             duration-300
+                            hover:-translate-y-0.5
                             hover:bg-amber-400
+                            hover:shadow-amber-300/20
+                            md:flex
                         "
                     >
-                        Habla ahora
+
+                        Hablemos
+
+                        <FaArrowRight
+                            className="
+                                text-xs
+                                transition-transform
+                                duration-300
+                                group-hover:translate-x-1
+                            "
+                        />
+
                     </a>
+
+
+                    {/* BOTÓN MOBILE */}
+
+                    <button
+                        type="button"
+                        aria-label={
+                            menuOpen
+                                ? "Cerrar menú"
+                                : "Abrir menú"
+                        }
+                        aria-expanded={menuOpen}
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className="
+                            flex
+                            h-10
+                            w-10
+                            items-center
+                            justify-center
+                            rounded-xl
+                            border
+                            border-white/10
+                            bg-white/5
+                            text-white
+                            transition
+                            duration-300
+                            hover:bg-white/10
+                            md:hidden
+                        "
+                    >
+
+                        {menuOpen ? (
+                            <FaXmark className="text-lg" />
+                        ) : (
+                            <FaBars className="text-lg" />
+                        )}
+
+                    </button>
 
                 </div>
 
-            </div>
 
-        </nav>
+                {/* MENU MOBILE */}
+
+                <div
+                    className={`
+                        overflow-hidden
+                        transition-all
+                        duration-500
+                        md:hidden
+
+                        ${
+                            menuOpen
+                                ? "max-h-[500px] opacity-100"
+                                : "max-h-0 opacity-0"
+                        }
+                    `}
+                >
+
+                    <div className="
+                        border-t
+                        border-white/10
+                        px-4
+                        pb-4
+                        pt-3
+                    ">
+
+                        <div className="
+                            flex
+                            flex-col
+                            gap-1
+                        ">
+
+                            {menuItems.map((item) => {
+
+                                const active =
+                                    location.pathname === item.path;
+
+                                return (
+
+                                    <Link
+                                        key={item.name}
+                                        to={item.path}
+                                        onClick={() =>
+                                            setMenuOpen(false)
+                                        }
+                                        className={`
+                                            rounded-xl
+                                            px-4
+                                            py-3
+                                            text-sm
+                                            font-medium
+                                            transition
+
+                                            ${
+                                                active
+                                                    ? `
+                                                        bg-white/10
+                                                        text-amber-300
+                                                      `
+                                                    : `
+                                                        text-slate-300
+                                                        hover:bg-white/5
+                                                        hover:text-white
+                                                      `
+                                            }
+                                        `}
+                                    >
+                                        {item.name}
+                                    </Link>
+
+                                );
+
+                            })}
+
+                        </div>
+
+
+                        {/* CTA MOBILE */}
+
+                        <a
+                            href="https://wa.me/56920358939"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setMenuOpen(false)}
+                            className="
+                                group
+                                mt-3
+                                flex
+                                w-full
+                                items-center
+                                justify-center
+                                gap-2
+                                rounded-xl
+                                bg-amber-300
+                                px-5
+                                py-3
+                                font-bold
+                                text-slate-900
+                                transition
+                                hover:bg-amber-400
+                            "
+                        >
+
+                            Hablemos de tu proyecto
+
+                            <FaArrowRight
+                                className="
+                                    text-xs
+                                    transition
+                                    group-hover:translate-x-1
+                                "
+                            />
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </header>
     );
 }
 
