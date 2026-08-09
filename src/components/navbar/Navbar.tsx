@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.webp";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 
@@ -8,7 +9,7 @@ function Navbar() {
     const [showNavbar, setShowNavbar] = useState(true);
 
     const menuItems = [
-        { name: "Inicio", path: "#inicio" },
+        { name: "Inicio", path: "/" },
         { name: "Nosotros", path: "#nosotros" },
         { name: "Servicios", path: "#servicios" },
         { name: "Contacto", path: "/contacto" },
@@ -67,8 +68,8 @@ function Navbar() {
             ">
 
                 {/* LOGO */}
-                <a
-                    href="#inicio"
+                <Link
+                    to="/"
                     onClick={() => setMenuOpen(false)}
                     className="
                         shrink-0
@@ -82,7 +83,7 @@ function Navbar() {
                         src={logo}
                         alt="Duckode"
                     />
-                </a>
+                </Link>
 
 
                 {/* MENÚ ESCRITORIO */}
