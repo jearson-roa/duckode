@@ -11,6 +11,7 @@ function Navbar() {
     const menuItems = [
         { name: "Inicio", path: "/" },
         { name: "Nosotros", path: "/nosotros" },
+        { name: "Portafolio", path: "/portafolio" },
         { name: "Servicios", path: "#servicios" },
         { name: "Contacto", path: "/contacto" },
     ];

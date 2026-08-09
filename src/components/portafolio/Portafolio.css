@@ -1,0 +1,184 @@
+
+/* ========================================
+   PORTAFOLIO
+======================================== */
+
+.portafolio-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Imagen del proyecto */
+
+.portafolio-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portafolio-card:hover .portafolio-imagen {
+    transform: scale(1.05);
+}
+
+
+/* Overlay de imagen */
+
+.portafolio-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.portafolio-card:hover .portafolio-overlay {
+    opacity: 1;
+}
+
+
+/* Botón ver proyecto */
+
+.portafolio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.portafolio-btn:hover {
+    transform: translateY(-2px);
+
+    background-color: #fcd34d;
+}
+
+
+/* Categoría */
+
+.portafolio-categoria {
+    font-size: 0.875rem;
+
+    font-weight: 600;
+
+    color: #2563eb;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* Título */
+
+.portafolio-titulo {
+    margin-top: 8px;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: #0f172a;
+}
+
+
+/* Descripción */
+
+.portafolio-descripcion {
+    margin-top: 12px;
+
+    line-height: 1.75;
+
+    color: #475569;
+}
+
+
+/* Tecnologías */
+
+.portafolio-tecnologias {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.portafolio-tecnologia {
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    background-color: #f1f5f9;
+
+    color: #475569;
+
+    font-size: 0.75rem;
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   ANIMACIÓN DE ENTRADA
+======================================== */
+
+@keyframes portafolioEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.portafolio-card {
+    animation: portafolioEntrada 0.6s ease forwards;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .portafolio-titulo {
+        font-size: 1.3rem;
+    }
+
+    .portafolio-descripcion {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+}
