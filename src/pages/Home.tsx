@@ -1,16 +1,16 @@
 import Hero from "../components/hero/Hero";
 import CardService from "../components/cardService/CardService";
-import Nosotros from "../components/nosotros/Nosotros";
-import Contacto2 from "../components/contacto/Contacto2";
+import NosotrosHome from "../components/nosotros/NosotrosHome";
+import ContactoHome from "../components/contacto/ContactoHome";
 
 
 function Home(){
     return (
         <>
         <Hero />
-        <Nosotros />
+        <NosotrosHome />
         <CardService />
-        <Contacto2 />
+        <ContactoHome />
         </>
 
     );

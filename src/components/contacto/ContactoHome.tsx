@@ -6,7 +6,7 @@ import {
     FaWhatsapp,
 } from "react-icons/fa6";
 
-function Contacto2() {
+function ContactoHome() {
 
     const form = useRef<HTMLFormElement>(null);
 
@@ -57,18 +57,18 @@ function Contacto2() {
         <section
             id="contacto"
             className="
-                bg-slate-100
+         
                 px-5
                 py-14
                 md:px-8
                 md:py-16
+                
             "
         >
 
             <div
                 className="
-                    mx-auto
-                    max-w-6xl
+
                 "
             >
 
@@ -364,4 +364,4 @@ function Contacto2() {
     );
 }
 
-export default Contacto2;
+export default ContactoHome;

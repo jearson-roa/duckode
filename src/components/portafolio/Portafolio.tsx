@@ -4,128 +4,144 @@ function Portafolio() {
 
     const proyectos = [
         {
-            icono: "language",
             categoria: "Desarrollo Web",
             titulo: "Sitio Web Corporativo",
             descripcion:
-                "Diseño y desarrollo de un sitio web moderno y responsivo para potenciar la presencia digital de una empresa.",
+                "Diseño y desarrollo de una presencia digital moderna, rápida y adaptable a cualquier dispositivo.",
             tecnologias: ["React", "Tailwind CSS"],
+            icono: "language",
+            numero: "01",
         },
-
         {
-            icono: "shopping_cart",
             categoria: "E-Commerce",
             titulo: "Tienda Online",
             descripcion:
-                "Implementación de una tienda online orientada a la venta de productos y a mejorar la experiencia de compra.",
+                "Una experiencia de compra pensada para mostrar productos, facilitar las ventas y conectar con clientes.",
             tecnologias: ["WordPress", "WooCommerce"],
+            icono: "shopping_cart",
+            numero: "02",
         },
-
         {
-            icono: "dashboard",
             categoria: "Software a medida",
             titulo: "Sistema de Gestión",
             descripcion:
-                "Sistema web desarrollado para optimizar procesos internos y facilitar la gestión de información de una empresa.",
+                "Plataforma web desarrollada para centralizar información, optimizar procesos y facilitar la gestión.",
             tecnologias: ["React", "Node.js", "MySQL"],
+            icono: "dashboard",
+            numero: "03",
         },
-
         {
-            icono: "smartphone",
             categoria: "Aplicaciones",
             titulo: "Aplicación Web",
             descripcion:
-                "Desarrollo de aplicaciones web adaptadas a las necesidades específicas de cada proyecto.",
+                "Soluciones web personalizadas enfocadas en resolver necesidades específicas de cada negocio.",
             tecnologias: ["React", "Node.js"],
+            icono: "smartphone",
+            numero: "04",
         },
-
         {
-            icono: "storefront",
             categoria: "E-Commerce",
             titulo: "Tienda Shopify",
             descripcion:
-                "Creación y personalización de tiendas online enfocadas en mejorar la presencia digital y las ventas.",
+                "Tienda online personalizada con una experiencia de compra simple, moderna y orientada a resultados.",
             tecnologias: ["Shopify", "Liquid"],
+            icono: "storefront",
+            numero: "05",
         },
-
         {
-            icono: "settings",
             categoria: "Soluciones digitales",
             titulo: "Sistema Personalizado",
             descripcion:
-                "Desarrollo de herramientas digitales para automatizar tareas y mejorar los procesos de un negocio.",
+                "Herramientas digitales diseñadas para automatizar tareas y mejorar el funcionamiento del negocio.",
             tecnologias: ["React", "Node.js", "MySQL"],
+            icono: "settings",
+            numero: "06",
         },
     ];
 
     return (
         <section
             id="portafolio"
-            className="
-                bg-slate-50
-                px-6
-                py-20
-                md:py-28
-            "
+            className="bg-white px-6 py-20 md:py-28"
         >
 
             <div className="mx-auto max-w-7xl">
 
-                {/* Encabezado */}
+                {/* ENCABEZADO */}
+
                 <div className="
-                    mx-auto
-                    max-w-3xl
-                    text-center
+                    pt-30
+                    flex
+                    flex-col
+                    gap-5
+                    md:flex-row
+                    md:items-end
+                    md:justify-between
                 ">
 
-                    <span className="
-                        text-sm
-                        font-semibold
-                        uppercase
-                        tracking-widest
-                        text-blue-600
-                    ">
-                        Portafolio
-                    </span>
+                    <div className="max-w-2xl">
 
-                    <h2 className="
-                        mt-3
-                        text-3xl
-                        font-bold
-                        text-slate-900
-                        md:text-4xl
-                    ">
-                        Proyectos y soluciones digitales
-                    </h2>
+                        <span className="
+                            inline-flex
+                            rounded-full
+                            bg-blue-50
+                            px-4
+                            py-1.5
+                            text-xs
+                            font-bold
+                            uppercase
+                            tracking-[0.2em]
+                            text-blue-600
+                        ">
+                            Portafolio
+                        </span>
+
+                        <h2 className="
+                            mt-5
+                            text-3xl
+                            font-bold
+                            leading-tight
+                            tracking-tight
+                            text-slate-900
+                            sm:text-4xl
+                            md:text-5xl
+                        ">
+                            Ideas que se convierten
+                            <span className="text-blue-600">
+                                {" "}en soluciones
+                            </span>
+                        </h2>
+
+                    </div>
 
                     <p className="
-                        mt-5
+                        max-w-md
                         text-base
                         leading-7
-                        text-slate-600
-                        md:text-lg
+                        text-slate-500
+                        md:text-right
                     ">
-                        Conoce algunos ejemplos de las soluciones que
-                        podemos desarrollar para llevar tu negocio
-                        al mundo digital.
+                        Desarrollamos soluciones digitales adaptadas
+                        a las necesidades reales de cada negocio.
                     </p>
 
                 </div>
 
 
-                {/* Tarjetas */}
+                {/* PROYECTOS */}
+
                 <div className="
-                    mt-12
+                    mt-14
                     grid
-                    gap-8
+                    gap-6
                     md:grid-cols-2
                     lg:grid-cols-3
                 ">
 
-                    {proyectos.map((proyecto, index) => (
+                    {proyectos.map((proyecto) => (
 
                         <article
-                            key={index}
+                            key={proyecto.numero}
                             className="
                                 group
                                 overflow-hidden
@@ -133,102 +149,157 @@ function Portafolio() {
                                 border
                                 border-slate-200
                                 bg-white
-                                shadow-sm
                                 transition-all
                                 duration-300
                                 hover:-translate-y-2
+                                hover:border-blue-200
                                 hover:shadow-xl
                             "
                         >
 
-                            {/* Parte visual */}
+                            {/* ÁREA VISUAL */}
+
                             <div className="
                                 relative
-                                flex
-                                h-48
-                                items-center
-                                justify-center
+                                h-52
                                 overflow-hidden
-                                bg-gradient-to-br
-                                from-blue-600
-                                to-slate-900
+                                bg-slate-900
                             ">
 
-                                {/* Decoración */}
-                                <div className="
-                                    absolute
-                                    -right-10
-                                    -top-10
-                                    h-32
-                                    w-32
-                                    rounded-full
-                                    bg-white/10
-                                "/>
+                                {/* Decoración superior */}
 
                                 <div className="
                                     absolute
-                                    -bottom-16
-                                    -left-10
-                                    h-40
-                                    w-40
+                                    -right-16
+                                    -top-16
+                                    h-48
+                                    w-48
                                     rounded-full
-                                    bg-white/10
-                                "/>
+                                    bg-blue-600/30
+                                    blur-2xl
+                                    transition-all
+                                    duration-500
+                                    group-hover:scale-125
+                                " />
+
+                                {/* Decoración inferior */}
+
+                                <div className="
+                                    absolute
+                                    -bottom-20
+                                    -left-16
+                                    h-52
+                                    w-52
+                                    rounded-full
+                                    bg-blue-500/20
+                                    blur-2xl
+                                    transition-all
+                                    duration-500
+                                    group-hover:scale-125
+                                " />
+
+                                {/* Número */}
+
+                                <span className="
+                                    absolute
+                                    left-6
+                                    top-5
+                                    text-xs
+                                    font-bold
+                                    tracking-widest
+                                    text-white/40
+                                ">
+                                    {proyecto.numero}
+                                </span>
 
 
                                 {/* Icono */}
-                                <span className="
-                                    material-symbols-outlined
-                                    relative
-                                    text-7xl
-                                    text-white
-                                    transition
-                                    duration-500
-                                    group-hover:scale-110
+
+                                <div className="
+                                    absolute
+                                    inset-0
+                                    flex
+                                    items-center
+                                    justify-center
                                 ">
-                                    {proyecto.icono}
+
+                                    <div className="
+                                        flex
+                                        h-20
+                                        w-20
+                                        items-center
+                                        justify-center
+                                        rounded-2xl
+                                        border
+                                        border-white/10
+                                        bg-white/10
+                                        backdrop-blur-sm
+                                        transition-all
+                                        duration-500
+                                        group-hover:scale-110
+                                        group-hover:bg-blue-600
+                                    ">
+
+                                        <span className="
+                                            material-symbols-outlined
+                                            text-4xl
+                                            text-white
+                                        ">
+                                            {proyecto.icono}
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                {/* Categoría */}
+
+                                <span className="
+                                    absolute
+                                    bottom-5
+                                    left-6
+                                    rounded-full
+                                    border
+                                    border-white/10
+                                    bg-white/10
+                                    px-3
+                                    py-1
+                                    text-xs
+                                    font-medium
+                                    text-white
+                                    backdrop-blur-sm
+                                ">
+                                    {proyecto.categoria}
                                 </span>
 
                             </div>
 
 
-                            {/* Contenido */}
-                            <div className="p-7">
+                            {/* CONTENIDO */}
 
-                                {/* Categoría */}
-                                <span className="
-                                    text-sm
-                                    font-semibold
-                                    uppercase
-                                    tracking-wide
-                                    text-blue-600
-                                ">
-                                    {proyecto.categoria}
-                                </span>
+                            <div className="p-6">
 
-
-                                {/* Título */}
                                 <h3 className="
-                                    mt-2
-                                    text-2xl
+                                    text-xl
                                     font-bold
                                     text-slate-900
                                 ">
                                     {proyecto.titulo}
                                 </h3>
 
-
-                                {/* Descripción */}
                                 <p className="
                                     mt-3
-                                    leading-7
-                                    text-slate-600
+                                    text-sm
+                                    leading-6
+                                    text-slate-500
                                 ">
                                     {proyecto.descripcion}
                                 </p>
 
 
-                                {/* Tecnologías */}
+                                {/* TECNOLOGÍAS */}
+
                                 <div className="
                                     mt-5
                                     flex
@@ -242,9 +313,9 @@ function Portafolio() {
                                             <span
                                                 key={tecnologia}
                                                 className="
-                                                    rounded-full
+                                                    rounded-md
                                                     bg-slate-100
-                                                    px-3
+                                                    px-2.5
                                                     py-1
                                                     text-xs
                                                     font-medium
@@ -259,6 +330,41 @@ function Portafolio() {
 
                                 </div>
 
+
+                                {/* PARTE INFERIOR */}
+
+                                <div className="
+                                    mt-6
+                                    flex
+                                    items-center
+                                    justify-between
+                                    border-t
+                                    border-slate-100
+                                    pt-5
+                                ">
+
+                                    <span className="
+                                        text-xs
+                                        font-medium
+                                        text-slate-400
+                                    ">
+                                        Solución Duckode
+                                    </span>
+
+                                    <span className="
+                                        material-symbols-outlined
+                                        text-lg
+                                        text-slate-400
+                                        transition-all
+                                        duration-300
+                                        group-hover:translate-x-1
+                                        group-hover:text-blue-600
+                                    ">
+                                        arrow_forward
+                                    </span>
+
+                                </div>
+
                             </div>
 
                         </article>
@@ -269,31 +375,63 @@ function Portafolio() {
 
 
                 {/* CTA */}
+
                 <div className="
-                    mt-14
+                    mt-16
+                    flex
+                    flex-col
+                    items-center
+                    justify-between
+                    gap-6
+                    rounded-2xl
+                    border
+                    border-slate-200
+                    bg-slate-50
+                    px-6
+                    py-8
                     text-center
+                    sm:flex-row
+                    sm:text-left
+                    md:px-10
                 ">
 
-                    <p className="
-                        text-slate-600
-                    ">
-                        ¿Tienes un proyecto en mente?
-                    </p>
+                    <div>
+
+                        <p className="
+                            text-lg
+                            font-bold
+                            text-slate-900
+                        ">
+                            ¿Tienes un proyecto en mente?
+                        </p>
+
+                        <p className="
+                            mt-1
+                            text-sm
+                            text-slate-500
+                        ">
+                            Cuéntanos tu idea y busquemos la mejor solución.
+                        </p>
+
+                    </div>
+
 
                     <Link
                         to="/contacto"
                         className="
-                            mt-4
+                            group
                             inline-flex
+                            shrink-0
                             items-center
                             gap-2
                             rounded-lg
                             bg-blue-600
-                            px-7
+                            px-6
                             py-3
+                            text-sm
                             font-semibold
                             text-white
-                            shadow-md
+                            shadow-sm
                             transition-all
                             duration-300
                             hover:-translate-y-1
@@ -306,6 +444,10 @@ function Portafolio() {
 
                         <span className="
                             material-symbols-outlined
+                            text-lg
+                            transition-transform
+                            duration-300
+                            group-hover:translate-x-1
                         ">
                             arrow_forward
                         </span>
@@ -321,4 +463,3 @@ function Portafolio() {
 }
 
 export default Portafolio;
-

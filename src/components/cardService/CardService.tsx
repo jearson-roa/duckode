@@ -103,6 +103,7 @@ function CardService() {
                 ========================== */}
 
                 <div className="
+                    pt-5
                     mx-auto
                     max-w-3xl
                     text-center
@@ -291,6 +292,7 @@ function CardService() {
                 <div className="
                     mt-10
                     text-center
+                    pb-10
                 ">
 
                     <p className="
