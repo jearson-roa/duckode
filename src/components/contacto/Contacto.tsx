@@ -1,3 +1,4 @@
+
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -50,10 +51,11 @@ function Contacto() {
     };
 
     return (
+
         <section
             id="contacto"
             className="
-                bg-white
+                bg-slate-50
                 px-6
                 py-20
                 md:py-28
@@ -63,6 +65,7 @@ function Contacto() {
             <div className="mx-auto max-w-7xl">
 
                 {/* Encabezado */}
+
                 <div className="
                     mx-auto
                     max-w-3xl
@@ -96,389 +99,630 @@ function Contacto() {
                         text-slate-600
                         md:text-lg
                     ">
-                        Cuéntanos qué necesitas y nos pondremos en
-                        contacto contigo para ayudarte.
+                        ¿Tienes una idea o necesitas una solución
+                        digital para tu negocio? Cuéntanos y
+                        conversemos sobre tu proyecto.
                     </p>
 
                 </div>
 
 
-                {/* Formulario */}
-                <form
-                    ref={form}
-                    onSubmit={enviarFormulario}
-                    className="
-                        mx-auto
-                        mt-12
-                        max-w-3xl
+                {/* Contenido */}
+
+                <div className="
+                    mt-12
+                    grid
+                    gap-10
+                    lg:grid-cols-5
+                ">
+
+
+                    {/* =====================================
+                        INFORMACIÓN DE CONTACTO
+                    ====================================== */}
+
+                    <div className="
+                        lg:col-span-2
                         rounded-2xl
-                        border
-                        border-slate-200
-                        bg-slate-50
-                        p-6
-                        shadow-sm
-                        md:p-8
-                    "
-                >
-
-                    {/* Nombre + Correo */}
-                    <div className="
-                        grid
-                        gap-6
-                        md:grid-cols-2
+                        bg-slate-900
+                        p-8
+                        text-white
+                        shadow-lg
+                        md:p-10
                     ">
 
-                        {/* Nombre */}
-                        <div>
-
-                            <label
-                                htmlFor="nombre"
-                                className="
-                                    mb-2
-                                    block
-                                    text-sm
-                                    font-semibold
-                                    text-slate-700
-                                "
-                            >
-                                Nombre
-                            </label>
-
-                            <input
-                                id="nombre"
-                                type="text"
-                                name="nombre"
-                                required
-                                placeholder="Tu nombre"
-                                className="
-                                    w-full
-                                    rounded-lg
-                                    border
-                                    border-slate-300
-                                    bg-white
-                                    px-4
-                                    py-3
-                                    text-slate-900
-                                    outline-none
-                                    transition
-                                    placeholder:text-slate-400
-                                    focus:border-blue-500
-                                    focus:ring-2
-                                    focus:ring-blue-100
-                                "
-                            />
-
-                        </div>
+                        <span className="
+                            material-symbols-outlined
+                            text-4xl
+                            text-amber-300
+                        ">
+                            forum
+                        </span>
 
 
-                        {/* Correo */}
-                        <div>
-
-                            <label
-                                htmlFor="correo"
-                                className="
-                                    mb-2
-                                    block
-                                    text-sm
-                                    font-semibold
-                                    text-slate-700
-                                "
-                            >
-                                Correo electrónico
-                            </label>
-
-                            <input
-                                id="correo"
-                                type="email"
-                                name="correo"
-                                required
-                                placeholder="tu@email.com"
-                                className="
-                                    w-full
-                                    rounded-lg
-                                    border
-                                    border-slate-300
-                                    bg-white
-                                    px-4
-                                    py-3
-                                    text-slate-900
-                                    outline-none
-                                    transition
-                                    placeholder:text-slate-400
-                                    focus:border-blue-500
-                                    focus:ring-2
-                                    focus:ring-blue-100
-                                "
-                            />
-
-                        </div>
-
-                    </div>
+                        <h3 className="
+                            mt-5
+                            text-2xl
+                            font-bold
+                        ">
+                            Conversemos
+                        </h3>
 
 
-                    {/* Teléfono + Servicio */}
-                    <div className="
-                        mt-6
-                        grid
-                        gap-6
-                        md:grid-cols-2
-                    ">
-
-                        {/* Teléfono */}
-                        <div>
-
-                            <label
-                                htmlFor="telefono"
-                                className="
-                                    mb-2
-                                    block
-                                    text-sm
-                                    font-semibold
-                                    text-slate-700
-                                "
-                            >
-                                Teléfono
-                            </label>
-
-                            <input
-                                id="telefono"
-                                type="tel"
-                                name="telefono"
-                                placeholder="+56 9 1234 5678"
-                                className="
-                                    w-full
-                                    rounded-lg
-                                    border
-                                    border-slate-300
-                                    bg-white
-                                    px-4
-                                    py-3
-                                    text-slate-900
-                                    outline-none
-                                    transition
-                                    placeholder:text-slate-400
-                                    focus:border-blue-500
-                                    focus:ring-2
-                                    focus:ring-blue-100
-                                "
-                            />
-
-                        </div>
+                        <p className="
+                            mt-4
+                            leading-7
+                            text-slate-300
+                        ">
+                            Estamos disponibles para conocer tu
+                            proyecto, resolver tus dudas y encontrar
+                            la mejor solución para tu negocio.
+                        </p>
 
 
-                        {/* Servicio */}
-                        <div>
+                        {/* WhatsApp */}
 
-                            <label
-                                htmlFor="servicio"
-                                className="
-                                    mb-2
-                                    block
-                                    text-sm
-                                    font-semibold
-                                    text-slate-700
-                                "
-                            >
-                                Servicio
-                            </label>
-
-                            <select
-                                id="servicio"
-                                name="servicio"
-                                required
-                                defaultValue=""
-                                className="
-                                    w-full
-                                    rounded-lg
-                                    border
-                                    border-slate-300
-                                    bg-white
-                                    px-4
-                                    py-3
-                                    text-slate-900
-                                    outline-none
-                                    transition
-                                    focus:border-blue-500
-                                    focus:ring-2
-                                    focus:ring-blue-100
-                                "
-                            >
-
-                                <option value="" disabled>
-                                    Selecciona un servicio
-                                </option>
-
-                                <option value="Sitio Web">
-                                    Sitio Web
-                                </option>
-
-                                <option value="Landing Page">
-                                    Landing Page
-                                </option>
-
-                                <option value="Tienda Online">
-                                    Tienda Online
-                                </option>
-
-                                <option value="Sistema a medida">
-                                    Sistema a medida
-                                </option>
-
-                                <option value="Aplicación">
-                                    Aplicación
-                                </option>
-
-                                <option value="Soporte y mantenimiento">
-                                    Soporte y mantenimiento
-                                </option>
-
-                                <option value="Otro">
-                                    Otro
-                                </option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-
-                    {/* Mensaje */}
-                    <div className="mt-6">
-
-                        <label
-                            htmlFor="mensaje"
+                        <a
+                            href="https://wa.me/56920358939"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="
-                                mb-2
-                                block
-                                text-sm
-                                font-semibold
-                                text-slate-700
+                                mt-8
+                                flex
+                                items-center
+                                gap-4
+                                rounded-xl
+                                bg-white/10
+                                p-4
+                                transition
+                                duration-300
+                                hover:bg-white/20
                             "
                         >
-                            Cuéntanos sobre tu proyecto
-                        </label>
 
-                        <textarea
-                            id="mensaje"
-                            name="mensaje"
-                            required
-                            rows={6}
-                            placeholder="Cuéntanos qué necesitas, qué tipo de proyecto tienes en mente, o cualquier detalle que consideres importante..."
-                            className="
-                                w-full
-                                resize-none
-                                rounded-lg
-                                border
-                                border-slate-300
-                                bg-white
-                                px-4
-                                py-3
-                                text-slate-900
-                                outline-none
-                                transition
-                                placeholder:text-slate-400
-                                focus:border-blue-500
-                                focus:ring-2
-                                focus:ring-blue-100
-                            "
-                        />
+                            <span className="
+                                material-symbols-outlined
+                                text-3xl
+                                text-green-400
+                            ">
+                                chat
+                            </span>
+
+                            <div>
+
+                                <p className="
+                                    text-sm
+                                    text-slate-400
+                                ">
+                                    WhatsApp
+                                </p>
+
+                                <p className="
+                                    font-semibold
+                                ">
+                                    +56 9 2035 8939
+                                </p>
+
+                            </div>
+
+                        </a>
+
+
+                        {/* Redes sociales */}
+
+                        <div className="mt-8">
+
+                            <p className="
+                                text-sm
+                                font-semibold
+                                text-slate-300
+                            ">
+                                También puedes encontrarnos en
+                            </p>
+
+
+                            <div className="
+                                mt-4
+                                flex
+                                gap-3
+                            ">
+
+                                {/* Instagram */}
+
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Instagram Duckode"
+                                    className="
+                                        flex
+                                        h-11
+                                        w-11
+                                        items-center
+                                        justify-center
+                                        rounded-lg
+                                        bg-white/10
+                                        transition
+                                        hover:-translate-y-1
+                                        hover:bg-pink-500
+                                    "
+                                >
+
+                                    <span className="
+                                        material-symbols-outlined
+                                    ">
+                                        photo_camera
+                                    </span>
+
+                                </a>
+
+
+                                {/* Facebook */}
+
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Facebook Duckode"
+                                    className="
+                                        flex
+                                        h-11
+                                        w-11
+                                        items-center
+                                        justify-center
+                                        rounded-lg
+                                        bg-white/10
+                                        transition
+                                        hover:-translate-y-1
+                                        hover:bg-blue-600
+                                    "
+                                >
+
+                                    <span className="
+                                        material-symbols-outlined
+                                    ">
+                                        public
+                                    </span>
+
+                                </a>
+
+
+                                {/* LinkedIn */}
+
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                    className="
+                                        flex
+                                        h-11
+                                        w-11
+                                        items-center
+                                        justify-center
+                                        rounded-lg
+                                        bg-white/10
+                                        transition
+                                        hover:-translate-y-1
+                                        hover:bg-blue-700
+                                    "
+                                >
+
+                                    <span className="
+                                        material-symbols-outlined
+                                    ">
+                                        business
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        {/* Fundador */}
+
+                        <div className="
+                            mt-8
+                            border-t
+                            border-white/10
+                            pt-6
+                        ">
+
+                            <p className="
+                                text-sm
+                                text-slate-400
+                            ">
+                                ¿Quieres conocer más sobre nosotros?
+                            </p>
+
+                            <p className="
+                                mt-1
+                                font-semibold
+                            ">
+                                Conoce al equipo de Duckode
+                            </p>
+
+                        </div>
 
                     </div>
 
 
-                    {/* Botón */}
-                    <button
-                        type="submit"
-                        disabled={enviando}
-                        className="
-                            mt-6
-                            flex
-                            w-full
-                            items-center
-                            justify-center
-                            gap-2
-                            rounded-lg
-                            bg-blue-600
-                            px-6
-                            py-3
-                            font-semibold
-                            text-white
-                            shadow-md
-                            transition-all
-                            duration-300
-                            hover:-translate-y-0.5
-                            hover:bg-blue-700
-                            hover:shadow-lg
-                            disabled:cursor-not-allowed
-                            disabled:opacity-60
-                        "
-                    >
+                    {/* =====================================
+                        FORMULARIO
+                    ====================================== */}
 
-                        {enviando ? (
-                            <>
-                                <span className="
-                                    material-symbols-outlined
-                                    animate-spin
+                    <div className="lg:col-span-3">
+
+                        <form
+                            ref={form}
+                            onSubmit={enviarFormulario}
+                            className="
+                                rounded-2xl
+                                border
+                                border-slate-200
+                                bg-white
+                                p-6
+                                shadow-sm
+                                md:p-8
+                            "
+                        >
+
+                            {/* Nombre + correo */}
+
+                            <div className="
+                                grid
+                                gap-6
+                                md:grid-cols-2
+                            ">
+
+                                <div>
+
+                                    <label
+                                        htmlFor="nombre"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            font-semibold
+                                            text-slate-700
+                                        "
+                                    >
+                                        Nombre
+                                    </label>
+
+                                    <input
+                                        id="nombre"
+                                        type="text"
+                                        name="nombre"
+                                        required
+                                        placeholder="Tu nombre"
+                                        className="
+                                            w-full
+                                            rounded-lg
+                                            border
+                                            border-slate-300
+                                            px-4
+                                            py-3
+                                            outline-none
+                                            transition
+                                            focus:border-blue-500
+                                            focus:ring-2
+                                            focus:ring-blue-100
+                                        "
+                                    />
+
+                                </div>
+
+
+                                <div>
+
+                                    <label
+                                        htmlFor="correo"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            font-semibold
+                                            text-slate-700
+                                        "
+                                    >
+                                        Correo electrónico
+                                    </label>
+
+                                    <input
+                                        id="correo"
+                                        type="email"
+                                        name="correo"
+                                        required
+                                        placeholder="tu@email.com"
+                                        className="
+                                            w-full
+                                            rounded-lg
+                                            border
+                                            border-slate-300
+                                            px-4
+                                            py-3
+                                            outline-none
+                                            transition
+                                            focus:border-blue-500
+                                            focus:ring-2
+                                            focus:ring-blue-100
+                                        "
+                                    />
+
+                                </div>
+
+                            </div>
+
+
+                            {/* Teléfono + servicio */}
+
+                            <div className="
+                                mt-6
+                                grid
+                                gap-6
+                                md:grid-cols-2
+                            ">
+
+                                <div>
+
+                                    <label
+                                        htmlFor="telefono"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            font-semibold
+                                            text-slate-700
+                                        "
+                                    >
+                                        Teléfono
+                                    </label>
+
+                                    <input
+                                        id="telefono"
+                                        type="tel"
+                                        name="telefono"
+                                        placeholder="+56 9 1234 5678"
+                                        className="
+                                            w-full
+                                            rounded-lg
+                                            border
+                                            border-slate-300
+                                            px-4
+                                            py-3
+                                            outline-none
+                                            transition
+                                            focus:border-blue-500
+                                            focus:ring-2
+                                            focus:ring-blue-100
+                                        "
+                                    />
+
+                                </div>
+
+
+                                <div>
+
+                                    <label
+                                        htmlFor="servicio"
+                                        className="
+                                            mb-2
+                                            block
+                                            text-sm
+                                            font-semibold
+                                            text-slate-700
+                                        "
+                                    >
+                                        Servicio
+                                    </label>
+
+                                    <select
+                                        id="servicio"
+                                        name="servicio"
+                                        required
+                                        defaultValue=""
+                                        className="
+                                            w-full
+                                            rounded-lg
+                                            border
+                                            border-slate-300
+                                            px-4
+                                            py-3
+                                            outline-none
+                                            transition
+                                            focus:border-blue-500
+                                            focus:ring-2
+                                            focus:ring-blue-100
+                                        "
+                                    >
+
+                                        <option
+                                            value=""
+                                            disabled
+                                        >
+                                            Selecciona un servicio
+                                        </option>
+
+                                        <option value="Sitio Web">
+                                            Sitio Web
+                                        </option>
+
+                                        <option value="Landing Page">
+                                            Landing Page
+                                        </option>
+
+                                        <option value="Tienda Online">
+                                            Tienda Online
+                                        </option>
+
+                                        <option value="Sistema a medida">
+                                            Sistema a medida
+                                        </option>
+
+                                        <option value="Aplicación">
+                                            Aplicación
+                                        </option>
+
+                                        <option value="Soporte y mantenimiento">
+                                            Soporte y mantenimiento
+                                        </option>
+
+                                        <option value="Otro">
+                                            Otro
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            {/* Mensaje */}
+
+                            <div className="mt-6">
+
+                                <label
+                                    htmlFor="mensaje"
+                                    className="
+                                        mb-2
+                                        block
+                                        text-sm
+                                        font-semibold
+                                        text-slate-700
+                                    "
+                                >
+                                    Cuéntanos sobre tu proyecto
+                                </label>
+
+                                <textarea
+                                    id="mensaje"
+                                    name="mensaje"
+                                    required
+                                    rows={6}
+                                    placeholder="Cuéntanos qué necesitas..."
+                                    className="
+                                        w-full
+                                        resize-none
+                                        rounded-lg
+                                        border
+                                        border-slate-300
+                                        px-4
+                                        py-3
+                                        outline-none
+                                        transition
+                                        focus:border-blue-500
+                                        focus:ring-2
+                                        focus:ring-blue-100
+                                    "
+                                />
+
+                            </div>
+
+
+                            {/* Botón */}
+
+                            <button
+                                type="submit"
+                                disabled={enviando}
+                                className="
+                                    mt-6
+                                    flex
+                                    w-full
+                                    items-center
+                                    justify-center
+                                    gap-2
+                                    rounded-lg
+                                    bg-blue-600
+                                    px-6
+                                    py-3
+                                    font-semibold
+                                    text-white
+                                    shadow-md
+                                    transition
+                                    hover:bg-blue-700
+                                    disabled:cursor-not-allowed
+                                    disabled:opacity-60
+                                "
+                            >
+
+                                {enviando ? (
+                                    <>
+                                        <span className="
+                                            material-symbols-outlined
+                                            animate-spin
+                                        ">
+                                            progress_activity
+                                        </span>
+
+                                        Enviando...
+                                    </>
+                                ) : (
+                                    <>
+                                        <span className="
+                                            material-symbols-outlined
+                                        ">
+                                            send
+                                        </span>
+
+                                        Enviar mensaje
+                                    </>
+                                )}
+
+                            </button>
+
+
+                            {/* Éxito */}
+
+                            {enviado && (
+
+                                <div className="
+                                    mt-5
+                                    rounded-lg
+                                    bg-green-50
+                                    px-4
+                                    py-3
+                                    text-center
+                                    text-sm
+                                    font-medium
+                                    text-green-700
                                 ">
-                                    progress_activity
-                                </span>
+                                    ¡Mensaje enviado correctamente!
+                                    Nos pondremos en contacto contigo.
+                                </div>
 
-                                Enviando...
-                            </>
-                        ) : (
-                            <>
-                                <span className="
-                                    material-symbols-outlined
+                            )}
+
+
+                            {/* Error */}
+
+                            {error && (
+
+                                <div className="
+                                    mt-5
+                                    rounded-lg
+                                    bg-red-50
+                                    px-4
+                                    py-3
+                                    text-center
+                                    text-sm
+                                    font-medium
+                                    text-red-700
                                 ">
-                                    send
-                                </span>
+                                    No pudimos enviar tu mensaje.
+                                    Inténtalo nuevamente.
+                                </div>
 
-                                Enviar mensaje
-                            </>
-                        )}
+                            )}
 
-                    </button>
+                        </form>
 
+                    </div>
 
-                    {/* Mensaje de éxito */}
-                    {enviado && (
-                        <div className="
-                            mt-5
-                            rounded-lg
-                            bg-green-50
-                            px-4
-                            py-3
-                            text-center
-                            text-sm
-                            font-medium
-                            text-green-700
-                        ">
-                            ¡Mensaje enviado correctamente!
-                            Nos pondremos en contacto contigo.
-                        </div>
-                    )}
-
-
-                    {/* Mensaje de error */}
-                    {error && (
-                        <div className="
-                            mt-5
-                            rounded-lg
-                            bg-red-50
-                            px-4
-                            py-3
-                            text-center
-                            text-sm
-                            font-medium
-                            text-red-700
-                        ">
-                            No pudimos enviar tu mensaje.
-                            Inténtalo nuevamente.
-                        </div>
-                    )}
-
-                </form>
+                </div>
 
             </div>
 
