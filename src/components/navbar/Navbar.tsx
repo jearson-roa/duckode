@@ -11,7 +11,7 @@ function Navbar() {
         { name: "Inicio", path: "#inicio" },
         { name: "Nosotros", path: "#nosotros" },
         { name: "Servicios", path: "#servicios" },
-        { name: "Contacto", path: "#contacto" },
+        { name: "Contacto", path: "/contacto" },
     ];
 
     useEffect(() => {
