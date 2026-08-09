@@ -1,41 +1,48 @@
+
 function CardService() {
 
     const servicios = [
         {
+            numero: "01",
             icono: "language",
             titulo: "Sitios Web",
             descripcion:
-                "Creamos sitios web modernos, rápidos y responsivos para que tu negocio tenga una presencia profesional en Internet.",
+                "Sitios web modernos, rápidos y responsivos para potenciar la presencia digital de tu negocio.",
         },
         {
+            numero: "02",
             icono: "web",
             titulo: "Landing Pages",
             descripcion:
-                "Diseñamos landing pages enfocadas en presentar tus servicios, captar clientes y convertir visitas en oportunidades.",
+                "Páginas enfocadas en presentar tus servicios, captar clientes y generar nuevas oportunidades.",
         },
         {
+            numero: "03",
             icono: "shopping_cart",
             titulo: "Tiendas Online",
             descripcion:
-                "Desarrollamos e-commerce en WordPress y Shopify para que puedas vender tus productos y servicios online.",
+                "E-commerce desarrollados con WordPress o Shopify para vender tus productos y servicios online.",
         },
         {
+            numero: "04",
             icono: "code",
             titulo: "Sistemas a Medida",
             descripcion:
-                "Desarrollamos sistemas personalizados para optimizar procesos, automatizar tareas y resolver necesidades específicas de tu empresa.",
+                "Sistemas personalizados para optimizar procesos, automatizar tareas y resolver necesidades específicas.",
         },
         {
+            numero: "05",
             icono: "phone_iphone",
             titulo: "Aplicaciones",
             descripcion:
-                "Creamos aplicaciones y soluciones digitales adaptadas a los objetivos y necesidades de tu negocio.",
+                "Aplicaciones y soluciones digitales adaptadas a los objetivos y necesidades de tu negocio.",
         },
         {
+            numero: "06",
             icono: "support_agent",
             titulo: "Soporte y Mantenimiento",
             descripcion:
-                "Te acompañamos después del desarrollo con soporte técnico y mantenimiento para mantener tus soluciones funcionando correctamente.",
+                "Soporte técnico y mantenimiento para mantener tus soluciones funcionando correctamente.",
         },
     ];
 
@@ -43,62 +50,122 @@ function CardService() {
         <section
             id="servicios"
             className="
-                bg-slate-50
+                relative
+                overflow-hidden
+                bg-white
                 px-6
-                py-20
-                md:py-28
+                py-16
+                md:py-20
             "
         >
 
-            <div className="mx-auto max-w-7xl">
+            {/* =========================
+                DECORACIONES
+            ========================== */}
 
-                {/* Encabezado */}
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    -left-40
+                    top-20
+                    h-80
+                    w-80
+                    rounded-full
+                    bg-blue-50
+                    blur-3xl
+                "
+            />
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    -right-40
+                    bottom-0
+                    h-80
+                    w-80
+                    rounded-full
+                    bg-blue-50
+                    blur-3xl
+                "
+            />
+
+
+            <div className="
+                relative
+                mx-auto
+                max-w-7xl
+            ">
+
+                {/* =========================
+                    ENCABEZADO
+                ========================== */}
+
                 <div className="
                     mx-auto
-                    mb-14
                     max-w-3xl
                     text-center
                 ">
 
                     <span className="
-                        text-sm
-                        font-semibold
+                        inline-flex
+                        rounded-full
+                        bg-blue-100
+                        px-4
+                        py-1.5
+                        text-xs
+                        font-bold
                         uppercase
-                        tracking-widest
+                        tracking-[0.2em]
                         text-blue-600
                     ">
-                        Lo que hacemos
+                        Servicios
                     </span>
 
+
                     <h2 className="
-                        mt-3
+                        mt-4
                         text-3xl
                         font-bold
+                        leading-tight
+                        tracking-tight
                         text-slate-900
-                        md:text-4xl
+                        sm:text-4xl
+                        md:text-5xl
                     ">
-                        Soluciones digitales para tu negocio
+                        Soluciones digitales
+                        <span className="text-blue-600">
+                            {" "}para tu negocio
+                        </span>
                     </h2>
 
+
                     <p className="
+                        mx-auto
                         mt-5
+                        max-w-2xl
                         text-base
                         leading-7
                         text-slate-600
                         md:text-lg
                     ">
-                        Desarrollamos soluciones digitales pensadas para
-                        ayudarte a mejorar tu presencia online, optimizar
-                        procesos y hacer crecer tu negocio.
+                        Diseñamos y desarrollamos soluciones pensadas
+                        para mejorar tu presencia digital, optimizar
+                        procesos y ayudarte a crecer.
                     </p>
 
                 </div>
 
 
-                {/* Servicios */}
+                {/* =========================
+                    SERVICIOS
+                ========================== */}
+
                 <div className="
+                    mt-12
                     grid
-                    gap-6
+                    gap-5
                     sm:grid-cols-2
                     lg:grid-cols-3
                 ">
@@ -106,45 +173,64 @@ function CardService() {
                     {servicios.map((servicio) => (
 
                         <article
-                            key={servicio.titulo}
+                            key={servicio.numero}
                             className="
                                 group
+                                relative
+                                overflow-hidden
                                 rounded-2xl
                                 border
                                 border-slate-200
-                                bg-white
-                                p-7
-                                shadow-sm
+                                bg-slate-50
+                                p-6
                                 transition-all
                                 duration-300
-                                hover:-translate-y-2
+                                hover:-translate-y-1
                                 hover:border-blue-200
+                                hover:bg-white
                                 hover:shadow-xl
                             "
                         >
 
+                            {/* Número */}
+
+                            <span className="
+                                absolute
+                                right-5
+                                top-4
+                                text-5xl
+                                font-black
+                                tracking-tight
+                                text-slate-100
+                                transition-colors
+                                duration-300
+                                group-hover:text-blue-50
+                            ">
+                                {servicio.numero}
+                            </span>
+
+
                             {/* Icono */}
+
                             <div className="
-                                mb-6
+                                relative
                                 flex
-                                h-14
-                                w-14
+                                h-12
+                                w-12
                                 items-center
                                 justify-center
                                 rounded-xl
-                                bg-blue-50
+                                bg-blue-100
+                                text-blue-600
                                 transition-all
                                 duration-300
                                 group-hover:bg-blue-600
+                                group-hover:text-white
                             ">
 
                                 <span className="
                                     material-symbols-outlined
-                                    text-3xl
-                                    text-blue-600
-                                    transition-colors
-                                    duration-300
-                                    group-hover:text-white
+                                    text-2xl
                                 ">
                                     {servicio.icono}
                                 </span>
@@ -152,56 +238,74 @@ function CardService() {
                             </div>
 
 
-                            {/* Título */}
-                            <h3 className="
-                                text-xl
-                                font-bold
-                                text-slate-900
-                            ">
-                                {servicio.titulo}
-                            </h3>
+                            {/* Contenido */}
 
+                            <div className="relative">
 
-                            {/* Descripción */}
-                            <p className="
-                                mt-3
-                                leading-7
-                                text-slate-600
-                            ">
-                                {servicio.descripcion}
-                            </p>
-
-
-                            {/* Detalle */}
-                            <div className="
-                                mt-6
-                                flex
-                                items-center
-                                gap-2
-                                text-sm
-                                font-semibold
-                                text-blue-600
-                            ">
-
-                                <span>
-                                    Conoce más
-                                </span>
-
-                                <span className="
-                                    material-symbols-outlined
+                                <h3 className="
+                                    mt-5
                                     text-lg
-                                    transition-transform
-                                    duration-300
-                                    group-hover:translate-x-1
+                                    font-bold
+                                    text-slate-900
                                 ">
-                                    arrow_forward
-                                </span>
+                                    {servicio.titulo}
+                                </h3>
+
+
+                                <p className="
+                                    mt-2
+                                    text-sm
+                                    leading-6
+                                    text-slate-500
+                                ">
+                                    {servicio.descripcion}
+                                </p>
+
+
+                                {/* Línea decorativa */}
+
+                                <div className="
+                                    mt-5
+                                    h-1
+                                    w-8
+                                    rounded-full
+                                    bg-blue-500
+                                    transition-all
+                                    duration-300
+                                    group-hover:w-14
+                                " />
 
                             </div>
 
                         </article>
 
                     ))}
+
+                </div>
+
+
+                {/* =========================
+                    CIERRE
+                ========================== */}
+
+                <div className="
+                    mt-10
+                    text-center
+                ">
+
+                    <p className="
+                        text-sm
+                        text-slate-500
+                    ">
+                        ¿No encuentras exactamente lo que necesitas?
+                        <span className="
+                            ml-1
+                            font-semibold
+                            text-blue-600
+                        ">
+                            También desarrollamos soluciones personalizadas.
+                        </span>
+                    </p>
 
                 </div>
 

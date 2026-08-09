@@ -1,285 +1,333 @@
 
 function Nosotros() {
+    const servicios = [
+        {
+            icono: "language",
+            titulo: "Desarrollo Web",
+            descripcion:
+                "Sitios web modernos, rápidos y adaptados a las necesidades de tu negocio.",
+        },
+        {
+            icono: "phone_iphone",
+            titulo: "Aplicaciones",
+            descripcion:
+                "Aplicaciones digitales pensadas para mejorar la experiencia de tus usuarios.",
+        },
+        {
+            icono: "code",
+            titulo: "Sistemas a medida",
+            descripcion:
+                "Soluciones personalizadas para optimizar y automatizar procesos.",
+        },
+        {
+            icono: "shopping_cart",
+            titulo: "E-commerce",
+            descripcion:
+                "Tiendas online profesionales con WordPress o Shopify.",
+        },
+    ];
+
     return (
         <section
             id="nosotros"
             className="
-                bg-white
+                relative
+                overflow-hidden
+                bg-slate-50
                 px-6
-                py-20
-                md:py-28
+                py-16
+                md:py-20
             "
         >
 
-            <div className="
-                mx-auto
-                max-w-7xl
-            ">
+            {/* Decoración */}
 
-                {/* Encabezado */}
-                <div className="
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    -right-40
+                    top-20
+                    h-80
+                    w-80
+                    rounded-full
+                    bg-blue-100/60
+                    blur-3xl
+                "
+            />
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    -bottom-40
+                    -left-40
+                    h-80
+                    w-80
+                    rounded-full
+                    bg-blue-100/50
+                    blur-3xl
+                "
+            />
+
+
+            <div
+                className="
+                    relative
                     mx-auto
-                    max-w-3xl
-                    text-center
-                ">
+                    max-w-7xl
+                "
+            >
 
-                    <span className="
-                        text-sm
-                        font-semibold
-                        uppercase
-                        tracking-widest
-                        text-blue-600
-                    ">
+                {/* =========================
+                    ENCABEZADO
+                ========================== */}
+
+                <div
+                    className="
+                        mx-auto
+                        max-w-3xl
+                        text-center
+                    "
+                >
+
+                    <span
+                        className="
+                            inline-flex
+                            items-center
+                            rounded-full
+                            bg-blue-100
+                            px-4
+                            py-1.5
+                            text-xs
+                            font-bold
+                            uppercase
+                            tracking-[0.2em]
+                            text-blue-600
+                        "
+                    >
                         Sobre nosotros
                     </span>
 
-                    <h2 className="
-                        mt-3
-                        text-3xl
-                        font-bold
-                        leading-tight
-                        text-slate-900
-                        md:text-4xl
-                    ">
-                        Soluciones digitales para hacer crecer tu negocio
+
+                    <h2
+                        className="
+                            mt-4
+                            text-3xl
+                            font-bold
+                            leading-tight
+                            tracking-tight
+                            text-slate-900
+                            sm:text-4xl
+                            md:text-5xl
+                        "
+                    >
+                        Tecnología que impulsa
+                        <span className="text-blue-600">
+                            {" "}tu negocio
+                        </span>
                     </h2>
 
-                    <p className="
-                        mt-6
-                        text-base
-                        leading-7
-                        text-slate-600
-                        md:text-lg
-                    ">
-                        Desde <strong className="text-slate-900">2025</strong>,
-                        en Duckode desarrollamos soluciones digitales pensadas
-                        para hacer crecer tu negocio. Creamos
+
+                    <p
+                        className="
+                            mx-auto
+                            mt-5
+                            max-w-2xl
+                            text-base
+                            leading-7
+                            text-slate-600
+                            md:text-lg
+                        "
+                    >
+                        En{" "}
+                        <strong className="font-semibold text-slate-900">
+                            DUCKODE
+                        </strong>{" "}
+                        desarrollamos soluciones digitales desde
                         <strong className="text-slate-900">
-                            {" "}sitios web, aplicaciones, sistemas a medida
-                            y tiendas online en WordPress y Shopify
-                        </strong>,
-                        combinando tecnología, diseño y funcionalidad para
-                        entregar soluciones adaptadas a cada cliente.
+                            {" "}2025
+                        </strong>
+                        , combinando tecnología, diseño y
+                        funcionalidad para crear herramientas
+                        adaptadas a cada negocio.
                     </p>
 
                 </div>
 
 
-                {/* Servicios principales */}
-                <div className="
-                    mt-14
-                    grid
-                    gap-6
-                    sm:grid-cols-2
-                    lg:grid-cols-4
-                ">
+                {/* =========================
+                    SERVICIOS
+                ========================== */}
 
-                    {/* Desarrollo Web */}
-                    <div className="
-                        rounded-2xl
-                        border
-                        border-slate-200
-                        bg-slate-50
-                        p-6
-                        text-center
-                        transition-all
-                        duration-300
-                        hover:-translate-y-2
-                        hover:shadow-lg
-                    ">
+                <div
+                    className="
+                        mt-12
+                        grid
+                        gap-5
+                        sm:grid-cols-2
+                        lg:grid-cols-4
+                    "
+                >
 
-                        <span className="
-                            material-symbols-outlined
-                            mb-4
-                            inline-flex
-                            rounded-xl
-                            bg-blue-100
-                            p-4
-                            text-4xl
-                            text-blue-600
-                        ">
-                            language
-                        </span>
+                    {servicios.map((servicio, index) => (
+                        <div
+                            key={servicio.titulo}
+                            className="
+                                group
+                                relative
+                                rounded-2xl
+                                border
+                                border-slate-200
+                                bg-white
+                                p-6
+                                shadow-sm
+                                transition-all
+                                duration-300
+                                hover:-translate-y-1
+                                hover:border-blue-200
+                                hover:shadow-lg
+                            "
+                        >
 
-                        <h3 className="
-                            text-lg
-                            font-bold
-                            text-slate-900
-                        ">
-                            Desarrollo Web
-                        </h3>
+                            {/* Número */}
 
-                        <p className="
-                            mt-2
-                            text-sm
-                            leading-6
-                            text-slate-600
-                        ">
-                            Sitios web modernos, rápidos y adaptados a
-                            las necesidades de tu negocio.
-                        </p>
-
-                    </div>
+                            <span
+                                className="
+                                    absolute
+                                    right-5
+                                    top-5
+                                    text-xs
+                                    font-bold
+                                    text-slate-300
+                                    transition
+                                    duration-300
+                                    group-hover:text-blue-200
+                                "
+                            >
+                                0{index + 1}
+                            </span>
 
 
-                    {/* Aplicaciones */}
-                    <div className="
-                        rounded-2xl
-                        border
-                        border-slate-200
-                        bg-slate-50
-                        p-6
-                        text-center
-                        transition-all
-                        duration-300
-                        hover:-translate-y-2
-                        hover:shadow-lg
-                    ">
+                            {/* Icono */}
 
-                        <span className="
-                            material-symbols-outlined
-                            mb-4
-                            inline-flex
-                            rounded-xl
-                            bg-blue-100
-                            p-4
-                            text-4xl
-                            text-blue-600
-                        ">
-                            phone_iphone
-                        </span>
+                            <div
+                                className="
+                                    flex
+                                    h-12
+                                    w-12
+                                    items-center
+                                    justify-center
+                                    rounded-xl
+                                    bg-blue-50
+                                    text-blue-600
+                                    transition-all
+                                    duration-300
+                                    group-hover:bg-blue-600
+                                    group-hover:text-white
+                                "
+                            >
 
-                        <h3 className="
-                            text-lg
-                            font-bold
-                            text-slate-900
-                        ">
-                            Aplicaciones
-                        </h3>
+                                <span
+                                    className="
+                                        material-symbols-outlined
+                                        text-2xl
+                                    "
+                                >
+                                    {servicio.icono}
+                                </span>
 
-                        <p className="
-                            mt-2
-                            text-sm
-                            leading-6
-                            text-slate-600
-                        ">
-                            Desarrollo de aplicaciones pensadas para
-                            mejorar la experiencia de tus usuarios.
-                        </p>
-
-                    </div>
+                            </div>
 
 
-                    {/* Sistemas a medida */}
-                    <div className="
-                        rounded-2xl
-                        border
-                        border-slate-200
-                        bg-slate-50
-                        p-6
-                        text-center
-                        transition-all
-                        duration-300
-                        hover:-translate-y-2
-                        hover:shadow-lg
-                    ">
+                            {/* Contenido */}
 
-                        <span className="
-                            material-symbols-outlined
-                            mb-4
-                            inline-flex
-                            rounded-xl
-                            bg-blue-100
-                            p-4
-                            text-4xl
-                            text-blue-600
-                        ">
-                            code
-                        </span>
+                            <h3
+                                className="
+                                    mt-5
+                                    text-lg
+                                    font-bold
+                                    text-slate-900
+                                "
+                            >
+                                {servicio.titulo}
+                            </h3>
 
-                        <h3 className="
-                            text-lg
-                            font-bold
-                            text-slate-900
-                        ">
-                            Sistemas a medida
-                        </h3>
-
-                        <p className="
-                            mt-2
-                            text-sm
-                            leading-6
-                            text-slate-600
-                        ">
-                            Soluciones personalizadas para optimizar y
-                            automatizar los procesos de tu empresa.
-                        </p>
-
-                    </div>
+                            <p
+                                className="
+                                    mt-2
+                                    text-sm
+                                    leading-6
+                                    text-slate-500
+                                "
+                            >
+                                {servicio.descripcion}
+                            </p>
 
 
-                    {/* Ecommerce */}
-                    <div className="
-                        rounded-2xl
-                        border
-                        border-slate-200
-                        bg-slate-50
-                        p-6
-                        text-center
-                        transition-all
-                        duration-300
-                        hover:-translate-y-2
-                        hover:shadow-lg
-                    ">
+                            {/* Línea */}
 
-                        <span className="
-                            material-symbols-outlined
-                            mb-4
-                            inline-flex
-                            rounded-xl
-                            bg-blue-100
-                            p-4
-                            text-4xl
-                            text-blue-600
-                        ">
-                            shopping_cart
-                        </span>
+                            <div
+                                className="
+                                    mt-5
+                                    h-1
+                                    w-8
+                                    rounded-full
+                                    bg-blue-500
+                                    transition-all
+                                    duration-300
+                                    group-hover:w-14
+                                "
+                            />
 
-                        <h3 className="
-                            text-lg
-                            font-bold
-                            text-slate-900
-                        ">
-                            E-commerce
-                        </h3>
-
-                        <p className="
-                            mt-2
-                            text-sm
-                            leading-6
-                            text-slate-600
-                        ">
-                            Tiendas online profesionales desarrolladas
-                            con WordPress o Shopify.
-                        </p>
-
-                    </div>
+                        </div>
+                    ))}
 
                 </div>
 
 
-                {/* Cierre */}
-                <div className="
-                    mt-14
-                    text-center
-                ">
+                {/* =========================
+                    CIERRE
+                ========================== */}
 
-                    <p className="
-                        text-lg
-                        font-semibold
-                        text-slate-900
-                        md:text-xl
-                    ">
+                <div
+                    className="
+                        mt-12
+                        flex
+                        flex-col
+                        items-center
+                        justify-center
+                        gap-3
+                        text-center
+                        sm:flex-row
+                    "
+                >
+
+                    <span
+                        className="
+                            flex
+                            h-8
+                            w-8
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-blue-100
+                            text-blue-600
+                        "
+                    >
+                        <span className="material-symbols-outlined text-lg">
+                            check
+                        </span>
+                    </span>
+
+                    <p
+                        className="
+                            text-base
+                            font-semibold
+                            text-slate-800
+                            md:text-lg
+                        "
+                    >
                         Tecnología, diseño y soluciones pensadas para tu negocio.
                     </p>
 
@@ -292,3 +340,4 @@ function Nosotros() {
 }
 
 export default Nosotros;
+
