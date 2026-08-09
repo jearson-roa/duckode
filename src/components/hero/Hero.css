@@ -1,23 +1,27 @@
 .bg-hero {
-    background: linear-gradient(
-        180deg,
-        #2573eb 15%,
-        #1e3a8a 80%
-    );
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(59, 130, 246, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #2573eb 0%,
+            #1e3a8a 100%
+        );
 }
 
-.texto-principal {
-    font-size: 3rem;
-    font-weight: bold;
-    line-height: 3rem;
+/* Evita espacios externos inesperados */
+section {
+    padding-top: 20px;
+    margin-top: -100px;
+
+    margin-bottom: 110px;
+    padding-bottom: 0px;
 }
 
-.texto-parrafo {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: #f3f4f6;
-}
-
+/* Material Symbols */
 .material-symbols-outlined {
     position: relative;
     top: 3px;
@@ -25,20 +29,20 @@
 }
 
 
-
-/* Vista móvil */
+/* Móvil */
 @media (max-width: 768px) {
 
-    .texto-principal {
-        margin-top: 1rem;
-        font-size: 2rem;
-        line-height: 2.2rem;
+    .bg-hero {
+        background:
+            radial-gradient(
+                circle at 80% 20%,
+                rgba(59, 130, 246, 0.3),
+                transparent 40%
+            ),
+            linear-gradient(
+                180deg,
+                #2573eb 0%,
+                #1e3a8a 100%
+            );
     }
-
-    .texto-parrafo {
-        font-size: 1rem;
-        line-height: 1.4rem;
-        margin-top: 0.8rem;
-    }
-
 }
