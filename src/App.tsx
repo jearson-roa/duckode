@@ -6,6 +6,7 @@ import Loading from "./components/Loading";
 import MainLayouts from "./layouts/MainLayouts";
 import Home from "./pages/Home";
 import Contacto from "./components/contacto/Contacto";
+import Nosotros from "./components/nosotros/Nosotros2";
 
 function App(){
   const [cargando, setCargando] = useState(true);
@@ -27,6 +28,7 @@ function App(){
       <Routes>
         <Route path="/" element={<MainLayouts />}>
           <Route index element={<Home />} />
+          <Route path="nosotros" element={<Nosotros />}/>
           <Route path="contacto" element={<Contacto />} />
         </Route>
       </Routes>

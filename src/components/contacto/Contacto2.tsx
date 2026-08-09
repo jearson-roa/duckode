@@ -53,7 +53,7 @@ function Contacto2() {
         <section
             id="contacto"
             className="
-                bg-slate-900
+                bg-blue-500/95
                 px-6
                 py-20
                 md:py-28
